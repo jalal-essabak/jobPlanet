@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Jobplanet - Responsive Job Board HTML Template </title>
+
+    <!--favicon-->
+    <link rel="apple-touch-icon" href="assets/theme/images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="assets/theme/images/favicon.ico" type="image/x-icon">
+
+    <!-- bootstrap -->
+    <link href="assets/plugins/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="assets/plugins/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- lightbox -->
+    <link href="assets/plugins/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+
+    <!-- Themes styles-->
+    <link href="assets/theme/css/theme.css" rel="stylesheet">  
+    <!-- Your custom css -->
+    <link href="assets/theme/css/theme-custom.css" rel="stylesheet">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>  
+  <body>
+    <!-- wrapper page -->
+    <div class="wrapper">
+      <!-- main-header -->
+      <header class="main-header">
+
+
+        <!-- main navbar -->
+        <nav class="navbar navbar-default main-navbar hidden-sm hidden-xs">
+          <div class="container">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="job_list.html"><strong>Find a Job</strong></a></li>
+                <li class=""><a href="resume_list.html"><strong>Find Resumes</strong></a></li>
+                <li  class=""><a href="job_post_1.html"><strong>Post a Job</strong></a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Pages <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="blog.html">Articles &amp; Blog</a></li>
+                    <li><a href="terms_privacy.html">Terms &amp; Privacy</a></li>
+                    <li><a href="error_404.html">Error 404</a></li>
+                    <li><a href="shortcode.html">Short Code</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Features <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="job_list.html">Find a Job</a></li>
+                    <li><a href="job_details.html">Job Details</a></li>
+                    <li><a href="resume_list.html">Find Resumes</a></li>
+                    <li><a href="resume_details.html">Resume Details</a></li>
+                    <li><a href="job_post_2.html">Post a Job</a></li>
+                    <li><a href="company_page.html">Company Profile</a></li>
+                  </ul>
+                </li>
+              </ul>      
+              <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                  <a href="#" class="link-profile dropdown-toggle"  data-toggle="dropdown" >
+                    <img src="assets/theme/images/people/4.jpg" alt="" class="img-profile"> &nbsp; Jhon <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="my_alerts.html"> My Alerts </a></li>
+                    <li><a href="my_notifications.html"> Notifications <span class="badge ">5</span></a></li>
+                    <li><a href="change_password.html"> Change Password</a></li>
+                  </ul>
+                </li>
+                <li class="link-btn"><a href="index.html"><span class="btn btn-theme  btn-pill btn-xs btn-line">Logout</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </nav><!-- end main navbar -->
+
+        <!-- mobile navbar -->
+        <div class="container">
+          <nav class="mobile-nav hidden-md hidden-lg">
+
+            <ul class="nav navbar-nav nav-block-left">
+              <li class="dropdown">
+                <a href="#" class="link-profile dropdown-toggle"  data-toggle="dropdown" >
+                  <img src="assets/theme/images/people/4.jpg" alt="" class="img-profile"> &nbsp; Jhon <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="my_alerts.html"> My Alerts </a></li>
+                  <li><a href="my_notifications.html"> Notifications <span class="badge ">5</span></a></li>
+                  <li><a href="change_password.html"> Change Password</a></li>
+                  <li><a href="index.html"> Logout</a></li>
+                </ul>
+              </li>
+            </ul>
+
+
+            <a href="#" class="btn-nav-toogle first">
+              <span class="bars"></span>
+              Menu
+            </a>
+            <div class="mobile-nav-block">
+              <h4>Navigation</h4>
+              <a href="#" class="btn-nav-toogle">
+                <span class="barsclose"></span>
+                Close
+              </a> 
+
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="job_list.html"><strong>Find a Job</strong></a></li>
+                <li class=""><a href="resume_list.html"><strong>Find Resumes</strong></a></li>
+                <li  class=""><a href="job_post_1.html"><strong>Post a Job</strong></a></li>
+                <li><a href="login.html"><strong>Login</strong></a></li>
+                <li><a href="register.html"><strong>Register</strong></a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Pages <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="blog.html">Articles &amp; Blog</a></li>
+                    <li><a href="terms_privacy.html">Terms &amp; Privacy</a></li>
+                    <li><a href="error_404.html">Error 404</a></li>
+                    <li><a href="shortcode.html">Short Code</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Features <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="job_list.html">Find a Job</a></li>
+                    <li><a href="job_details.html">Job Details</a></li>
+                    <li><a href="resume_list.html">Find Resumes</a></li>
+                    <li><a href="resume_details.html">Resume Details</a></li>
+                    <li><a href="job_post_2.html">Post a Job</a></li>
+                    <li><a href="company_page.html">Company Profile</a></li>
+                  </ul>
+                </li>
+              </ul>      
+            </div>
+          </nav>
+        </div><!-- mobile navbar -->
+
+
+        <!-- form search area-->
+        <div class="container">
+          <div class="row">
+
+            <div class="col-md-4">
+              <!-- logo -->
+              <div class="logo text-center-sm"> <a href="index.html"><img src="assets/theme/images/logo.png" alt=""></a></div>
+            </div>
+
+            <div class="col-md-8">
+              <!-- form search -->
+              <form class="form-search-list">
+                <div class="row">
+                  <div class="col-sm-5 col-xs-6 ">
+                    <div class="form-group">
+                      <label class="color-white">What</label>
+                      <input class="form-control" placeholder="job title, keywords or company name" >
+                    </div>
+                  </div>
+                  <div class="col-sm-5 col-xs-6 ">
+                    <div class="form-group">
+                      <label class="color-white">Where</label>
+                      <input class="form-control" placeholder="city, province, or region">
+                    </div>
+                  </div>
+                  <div class="col-sm-2 col-xs-12 ">
+                    <div class="form-group">
+                      <label class="hidden-xs">&nbsp;</label>
+                      <button class="btn btn-block btn-theme  btn-success">Search</button>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-right"><a href="#modal-advanced" data-toggle="modal" class="link-white">Advanced Search</a></p>
+              </form>  <!-- form search -->
+            </div>
+
+
+          </div>
+
+
+          <!-- modal Advanced search -->
+          <div class="modal fade" id="modal-advanced" >
+            <div class="modal-dialog ">
+              <div class="modal-content">
+                <form>
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Advanced Job Search</h4>
+                  </div>
+                  <div class="modal-body">
+                    <h5>Find Jobs</h5>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>With all of these words</label>
+                          <input type="text" class="form-control " name="text" >
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>With the exact phrase</label>
+                          <input type="text" class="form-control " name="text" >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Show jobs of type</label>
+                      <select class="form-control">
+                        <option value="all">All job types</option>
+                        <option value="fulltime">Full-time</option>
+                        <option value="parttime">Part-time</option>
+                        <option value="contract">Contract</option>
+                        <option value="internship">Internship</option>
+                        <option value="temporary">Temporary</option>
+                      </select>
+                    </div>
+                    <div class="white-space-10"></div>
+                    <h5>Where and When</h5>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Radius  </label>
+                          <select id="radius" class="form-control">
+                            <option value="0">only in</option>
+                            <option value="5">within 5 kilometers </option>
+                            <option value="10">within 10 kilometers </option>
+                            <option value="15">within 15 kilometers </option>
+                            <option selected="" value="25">within 25 kilometers </option>
+                            <option value="50">within 50 kilometers </option>
+                            <option value="100">within 100 kilometers </option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Of  </label>
+                          <input type="text" class="form-control" maxlength="250" value="United States">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Age - Jobs published  </label>
+                          <select class="form-control">
+                            <option value="any">anytime</option>
+                            <option value="15">within 15 days</option>
+                            <option value="7">within 7 days</option>
+                            <option value="3">within 3 days</option>
+                            <option value="1">since yesterday</option>
+                            <option value="last">since my last visit</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Display</label>
+                          <select class="form-control">
+                            <option selected="" value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="50">50</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-theme" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success btn-theme">Find Jobs</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div><!-- end modal forgot password -->
+
+
+
+
+        </div><!-- end form search area-->
+
+      </header><!-- end main-header -->
+
+
+      <!-- body-content -->
+      <div class="body-content clearfix" >
+
+        <!-- top link -->
+        <div class="bg-color2 block-section-xs line-bottom">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 hidden-xs">
+                <div>Company profile :</div>
+              </div>
+              <div class="col-sm-6">
+                <div class="text-right"><a href="#">&laquo; Go back to job listings</a></div>
+              </div>
+            </div>
+          </div>
+        </div><!-- end top link -->
+
+        <!-- company profile -->
+        <div class="bg-color2">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9">
+
+                <!-- box item details -->
+                <div class="block-section box-item-details">
+                  <!-- logo company-->
+                  <div class="row">
+                    <div class="col-md-8">
+                      <a href="company_page.html"><img src="./assets/theme/images/patner/4.png" alt=""></a>
+                    </div>
+                    <div class="col-md-4">
+                      <p class="text-right"><a href="#">Go to our website &raquo;</a></p>
+                    </div>
+                  </div><!-- end logo company-->
+
+                  <!-- Bout Company-->
+                  <h3 class="title" id="cp-about">About</h3>
+
+                  <p>For over 50 years, Our Company has been a leader in the global IT industry. </p> 
+                  <p>Early on, we were instrumental in the rise of the U.S. space program, the creation of global computer timesharing networks, the use of complex databases to consolidate credit information, and we were the first software firm to be listed on the New York Stock Exchange. </p>
+                  <p>More recently we invented the concept of business process reengineering, implemented the first airport ground traffic system, pioneered the strategic use of IT outsourcing by the world’s leading businesses, and led the first major public sector cloud computing project. </p>
+                  <p>Currently, Our Company employs 91,000 professionals in 90 countries and is listed as a Fortune "World's Most Admired Company," ranking in the Top 4 of IT services providers (2011) for the second consecutive year.</p>
+                  <p>Our Company offers challenging professional opportunities that will draw on your skills and allow you to identify and achieve your career goals in a supportive environment. Our Company also offers many avenues to mastering your chosen profession - with exciting work assignments, training opportunities and exposure to new business ideas, knowledge and people. At Our Company, you can have a voice in your job, take control of your career path and contribute to the company's overall operation and growth. Count on us for excellent career opportunities.</p>
+
+                  <!-- Reviews list-->
+                  <h3 class="title" id="cp-review">Review &nbsp;
+                    <span class="rate">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star-half-o"></i>
+                    </span> 
+                    <small>(1390)</small>
+                  </h3>
+                  <h4>Company Attributes</h4>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <p><span class="rate">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star-half-o"></i>
+                        </span> Job Work/Life Balance</p>
+                      <p><span class="rate">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star-half-o"></i>
+                        </span> Compensation/Benefits</p>
+                      <p><span class="rate">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star-half-o"></i>
+                        </span> Job Security/Advancement</p>
+                    </div>
+                    <div class="col-sm-6">
+                      <p><span class="rate">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star-half-o"></i>
+                        </span> Management</p>
+                      <p><span class="rate">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star-half-o"></i>
+                        </span>Job Culture</p>
+
+                    </div>
+                  </div>
+
+
+                  <h4>List Reviews</h4>
+                  <div class="mt-20">
+                    <h5><span class="rate">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                      </span> Productive and fun workplace.</h5>
+                    <p>Customer Service Specialist (Current Employee), Nashville, TN – February 21, 2015</p>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <p><strong>Pros</strong>: free lunches, overtime, benefits, and good work hours</p>
+                      </div>
+                      <div class="col-sm-6">
+                        <p> <strong>Cons</strong>:  sit down at desk for long periods of time, job security</p>
+                      </div>
+                    </div>
+                    <p>A typical day at work is to come in and log on to the computer and log in to the phone system. Open all necessary applications to service the incoming calls. I learned a lot about fixed annuities, it is still a daily learning process. The management has genuine care for the employees.My co-workers are all friendly and easy to work with. The hardest part of the job is finding the correct information to provide to the customers, I want to be as informative and accurate as possible. The most enjoyable part of the job is interacting with the customers and making them feel comfortable with speaking to me about their questions and concerns.</p>
+
+                  </div>
+                  <div class="mt-20">
+                    <h5><span class="rate">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </span> Getting paid to have fun.</h5>
+                    <p>Unarmed Security Guard (Former Employee), Nashville, TN – February 22, 2015</p>
+                    <p>This was my favorite job so far. I got to watch some of my favorite bands while getting paid for it! Also, I was taught to handle some difficult situations with intoxicated and unruly people. This is has given me more experience with customer service!</p>
+
+                  </div>
+                  <p><a href="#" class="btn btn-theme btn-line dark btn-sm btn-pill">Load More</a></p>
+
+
+                  <!-- galery photos-->
+                  <h3 class="title" id="cp-photos">Photos <small>(8)</small></h3>
+                  <div class="row company-photos galery-popup-area">
+                    <div class="col-sm-3 col-xs-6">
+                      <a href="http://placehold.it/900x450" class="galery-popup" title="pic01"><img src="http://placehold.it/500x350" alt="" class="img-full"></a>
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                      <a href="http://placehold.it/900x450" class="galery-popup" title="pic02"><img src="http://placehold.it/500x350" alt="" class="img-full"></a>
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                      <a href="http://placehold.it/900x450" class="galery-popup" title="pic03"><img src="http://placehold.it/500x350" alt="" class="img-full"></a>
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                      <a href="http://placehold.it/900x450" class="galery-popup" title="pic04"><img src="http://placehold.it/500x350" alt="" class="img-full"></a>
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                      <a href="http://placehold.it/900x450" class="galery-popup" title="pic05"><img src="http://placehold.it/500x350" alt="" class="img-full"></a>
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                      <a href="http://placehold.it/900x450" class="galery-popup" title="pic06"><img src="http://placehold.it/500x350" alt="" class="img-full"></a>
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                      <a href="http://placehold.it/900x450" class="galery-popup" title="pic07"><img src="http://placehold.it/500x350" alt="" class="img-full"></a>
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                      <a href="http://placehold.it/900x450" class="galery-popup" title="pic08"><img src="http://placehold.it/500x350" alt="" class="img-full"></a>
+                    </div>
+                  </div>
+
+                  <!-- jobs list-->
+                  <h3 class="title" id="cp-jobs">jobs <small>(303)</small></h3>
+                  <div class="mt-20">
+                    <h4><a href="job_details.html" class="">PHP Engineer <i class="fa fa-link color-white-mute font-1x"></i></a></h4>
+                    <p>Oak Ridge, TN</p>
+                  </div>
+                  <div class="mt-20">
+                    <h4><a href="job_details.html" class="">Software Developer/Analyst - Web Developer  <i class="fa fa-link color-white-mute font-1x"></i></a></h4>
+                    <p>Baton Rouge, LA</p>
+                  </div>
+                  <div class="mt-20">
+                    <h4><a href="job_details.html" class="">Full Stack Web Developer, Internal Tools <i class="fa fa-link color-white-mute font-1x"></i></a></h4>
+                    <p>Macon, GA</p>
+                  </div>
+                  <div class="mt-20">
+                    <h4><a href="job_details.html" class="">Entry Level - Software Engineer <i class="fa fa-link color-white-mute font-1x"></i></a></h4>
+                    <p>Mobile, AL</p>
+                  </div>
+                  <p><a href="#" class="btn btn-theme btn-line dark btn-sm btn-pill">Load More</a></p>
+                </div><!-- end box item details -->
+
+
+              </div>
+              <div class="col-md-3">
+
+                <!-- box afix right -->
+                <div class="block-section " id="affix-box">
+                  <div class="text-center">
+                    <p><a href="#" class="btn btn-theme btn-t-primary btn-block">Follow</a></p>
+
+                    <ul class="list-unstyled nav-sidebar">
+                      <li>
+                        <a href="#cp-about" class="link-innerpage">About</a>
+                      </li>
+                      <li>
+                        <a href="#cp-review" class="link-innerpage">Review</a>
+                      </li>
+                      <li>
+                        <a href="#cp-photos" class="link-innerpage">Photos</a>
+                      </li>
+                      <li>
+                        <a href="#cp-jobs" class="link-innerpage">Jobs</a>
+                      </li>
+                    </ul>
+                    <p>Share This Company </p>
+                    <p class="share-btns">
+                      <a href="#" class="btn btn-primary"><i class="fa fa-facebook"></i></a>
+                      <a href="#" class="btn btn-info"><i class="fa fa-twitter"></i></a>
+                      <a href="#" class="btn btn-danger"><i class="fa fa-google-plus"></i></a>
+                      <a href="#" class="btn btn-warning"><i class="fa fa-envelope"></i></a>
+                    </p>
+                  </div>
+                </div><!-- end box afix right -->
+
+
+              </div>
+            </div>
+          </div>
+        </div> <!-- end company profile -->
+
+        <!-- block map -->
+        <div class="collapse" id="map-toogle">
+          <div class=" bg-color2" id="map-area">
+            <div class="container">
+
+              <!-- map description -->
+              <div class="marker-description">
+                <div class="inner">
+                  <h4 class="no-margin-top">Office Location</h4>
+                  Central Jakarta No 1234, Jakarta, Indonesia
+                </div>
+              </div><!-- end map description -->
+
+            </div>
+            <div class="map-area-detail">
+              <!-- change this data lat and lng -->
+              <div class="box-map-detail" id="map-detail-job" data-lat="48.856318" data-lng="2.351866"></div>
+            </div>
+
+          </div><!-- end block map -->
+        </div>
+
+
+
+
+
+        <!-- modal apply -->
+        <div class="modal fade" id="modal-apply">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <form>
+                <div class="modal-header ">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" >Apply</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label>Full name</label>
+                    <input type="email" class="form-control "  placeholder="Enter Email">
+                  </div>
+                  <div class="form-group">
+                    <label>Email address</label>
+                    <input type="email" class="form-control "  placeholder="Enter Email">
+                  </div>
+                  <div class="form-group">
+                    <label>Tell us why you better?</label>
+                    <textarea class="form-control" rows="6" placeholder="Something Comment"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label>Your Resume</label>
+                    <div class="input-group">
+                      <span class="input-group-btn">
+                        <span class="btn btn-default btn-theme btn-file">
+                          File  <input type="file" >
+                        </span>
+                      </span>
+                      <input type="text" class="form-control form-flat" readonly>
+                    </div>
+                    <small>Upload your CV/resume. Max. file size: 24 MB.</small>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default btn-theme" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-success btn-theme">Send Application</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div><!-- end modal  apply -->        
+      </div><!--end body-content -->
+
+
+      <!-- main-footer -->
+      <footer class="main-footer">
+
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <ul class="list-inline link-footer text-center-xs">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6 ">
+              <p class="text-center-xs hidden-lg hidden-md hidden-sm">Stay Connect</p>
+              <div class="socials text-right text-center-xs">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-youtube-play"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer><!-- end main-footer -->
+
+    </div><!-- end wrapper page -->
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="assets/plugins/jquery.js"></script>
+    <script src="assets/plugins/jquery.easing-1.3.pack.js"></script>
+    <!-- jQuery Bootstrap -->
+    <script src="assets/plugins/bootstrap-3.3.2/js/bootstrap.min.js"></script>
+    <!-- Lightbox -->
+    <script src="assets/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <!-- Theme JS -->
+    <script src="assets/theme/js/theme.js"></script>
+
+    <!-- maps -->
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script> 
+    <script src="assets/plugins/gmap3.min.js"></script>
+    <!-- maps single marker -->
+    <script src="assets/theme/js/map-detail.js"></script>
+
+  </body>
+</html>
