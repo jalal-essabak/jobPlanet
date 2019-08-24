@@ -6,14 +6,14 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class aboutController extends Controller
+class indexController extends Controller
 {
     /**
      * @Route("/")
      */
-    public function about()
+    public function index()
     {
-        return $this->render('mainfiles/about.html.twig');
+        return $this->render('mainfiles/index.html.twig');
     }
 }
 ?>
