@@ -7,14 +7,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class indexController extends Controller
+class jobController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/job/find")
      */
     public function index()
     {
-        return $this->render('mainfiles/index.html.twig');
+        return $this->render('mainfiles/job_list.html.twig');
     }
     
 }

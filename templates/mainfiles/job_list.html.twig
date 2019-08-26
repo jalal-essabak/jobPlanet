@@ -8,23 +8,22 @@
     <title>Jobplanet - Responsive Job Board HTML Template </title>
 
     <!--favicon-->
-    <link rel="apple-touch-icon" href="assets/theme/images/apple-touch-icon.png">
-    <link rel="shortcut icon" href="assets/theme/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href={{asset("assets/theme/images/apple-touch-icon.png")}}>
+    <link rel="shortcut icon" href={{asset("assets/theme/images/favicon.ico")}} type="image/x-icon">
 
     <!-- bootstrap -->
-    <link href="assets/plugins/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href={{asset('assets/plugins/bootstrap-3.3.2/css/bootstrap.min.css')}} rel="stylesheet">
     <!-- Icons -->
-    <link href="assets/plugins/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href={{asset("assets/plugins/font-awesome-4.2.0/css/font-awesome.min.css")}} rel="stylesheet">
 
     <!-- lightbox -->
-    <link href="assets/plugins/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href={{asset("assets/plugins/magnific-popup/magnific-popup.css")}} rel="stylesheet">
 
 
     <!-- Themes styles-->
-    <link href="assets/theme/css/theme.css" rel="stylesheet">  
+    <link href={{asset("assets/theme/css/theme.css")}} rel="stylesheet">  
     <!-- Your custom css -->
-    <link href="assets/theme/css/theme-custom.css" rel="stylesheet">
+    <link href={{asset("assets/theme/css/theme-custom.css")}} rel="stylesheet">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -135,7 +134,7 @@
 
             <div class="col-md-4">
               <!-- logo -->
-              <div class="logo text-center-sm"> <a href="index.html"><img src="assets/theme/images/logo.png" alt=""></a></div>
+              <div class="logo text-center-sm"> <a href="index.html"><img src={{ asset("assets/theme/images/logo.png")}} alt=""></a></div>
             </div>
 
             <div class="col-md-8">
@@ -300,7 +299,7 @@
                   <div class="box-list">
                     <div class="item">
                       <div class="row">
-                        <div class="col-md-1 hidden-sm hidden-xs"><div class="img-item"><img src="./assets/theme/images/company-logo/1.jpg" alt=""></div></div>
+                        <div class="col-md-1 hidden-sm hidden-xs"><div class="img-item"><img src={{asset("./assets/theme/images/company-logo/1.jpg")}} alt=""></div></div>
                         <div class="col-md-11">
                           <h3 class="no-margin-top"><a href="job_details.html" class="">Backend Developer <i class="fa fa-link color-white-mute font-1x"></i></a></h3>
                           <h5><span class="color-black">CollegeHumor</span> - <span class="color-white-mute">New York, NY 10011 (Chelsea area)</span></h5>
@@ -318,7 +317,7 @@
                     <!-- item list -->
                     <div class="item">
                       <div class="row">
-                        <div class="col-md-1 hidden-sm hidden-xs"><div class="img-item"><img src="./assets/theme/images/company-logo/2.jpg" alt=""></div></div>
+                        <div class="col-md-1 hidden-sm hidden-xs"><div class="img-item"><img src={{asset("./assets/theme/images/company-logo/2.jpg")}} alt=""></div></div>
                         <div class="col-md-11">
                           <h3 class="no-margin-top"><a href="job_details.html" class="">Software Developer/Analyst - Web Developer <i class="fa fa-link color-white-mute font-1x"></i></a></h3>
                           <h5><span class="color-black">University of Texas at Austin</span> - <span class="color-white-mute">Austin, TX</span></h5>
@@ -336,7 +335,7 @@
                     <!-- item list -->
                     <div class="item">
                       <div class="row">
-                        <div class="col-md-1 hidden-sm hidden-xs"><div class="img-item"><img src="./assets/theme/images/company-logo/3.jpg" alt=""></div></div>
+                        <div class="col-md-1 hidden-sm hidden-xs"><div class="img-item"><img src={{asset("./assets/theme/images/company-logo/3.jpg")}} alt=""></div></div>
                         <div class="col-md-11">
                           <h3 class="no-margin-top"><a href="job_details.html" class="">Full Stack Web Developer, Internal Tools <i class="fa fa-link color-white-mute font-1x"></i></a></h3>
                           <h5><span class="color-black">Krossover</span> - <span class="color-white-mute">New York, NY 10011 (Chelsea area)</span></h5>
@@ -354,7 +353,7 @@
                     <!-- item list -->
                     <div class="item">
                       <div class="row">
-                        <div class="col-md-1 hidden-sm hidden-xs"><div class="img-item"><img src="./assets/theme/images/company-logo/4.jpg" alt=""></div></div>
+                        <div class="col-md-1 hidden-sm hidden-xs"><div class="img-item"><img src={{asset("./assets/theme/images/company-logo/4.jpg")}} alt=""></div></div>
                         <div class="col-md-11">
                           <h3 class="no-margin-top"><a href="job_details.html" class="">Entry Level - Software Engineer <i class="fa fa-link color-white-mute font-1x"></i></a></h3>
                           <h5><span class="color-black">Tektronix </span> - <span class="color-white-mute">Beaverton, OR</span></h5>
@@ -372,7 +371,7 @@
                     <!-- item list -->
                     <div class="item">
                       <div class="row">
-                        <div class="col-md-1 hidden-sm hidden-xs"><div class="img-item"><img src="./assets/theme/images/company-logo/5.jpg" alt=""></div></div>
+                        <div class="col-md-1 hidden-sm hidden-xs"><div class="img-item"><img src={{asset("./assets/theme/images/company-logo/5.jpg")}} alt=""></div></div>
                         <div class="col-md-11">
                           <h3 class="no-margin-top"><a href="job_details.html" class="">PHP Engineer <i class="fa fa-link color-white-mute font-1x"></i></a></h3>
                           <h5><span class="color-black">Shutterstock </span> 
@@ -701,20 +700,20 @@
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="assets/plugins/jquery.js"></script>
-    <script src="assets/plugins/jquery.easing-1.3.pack.js"></script>
+    <script src={{asset("assets/plugins/jquery.js")}}></script>
+    <script src={{asset("assets/plugins/jquery.easing-1.3.pack.js")}}></script>
     <!-- jQuery Bootstrap -->
-    <script src="assets/plugins/bootstrap-3.3.2/js/bootstrap.min.js"></script>
+    <script src={{asset("assets/plugins/bootstrap-3.3.2/js/bootstrap.min.js")}}></script>
     <!-- Lightbox -->
-    <script src="assets/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src={{asset("assets/plugins/magnific-popup/jquery.magnific-popup.min.js")}}></script>
     <!-- Theme JS -->
-    <script src="assets/theme/js/theme.js"></script>
+    <script src={{asset("assets/theme/js/theme.js")}}></script>
 
     <!-- maps -->
     <script src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script> 
-    <script src="assets/plugins/gmap3.min.js"></script>
+    <script src={{asset("assets/plugins/gmap3.min.js")}}></script>
     <!-- maps single marker -->
-    <script src="assets/theme/js/map-detail.js"></script>
+    <script src={{asset("assets/theme/js/map-detail.js")}}></script>
 
   </body>
 </html>
