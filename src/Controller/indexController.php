@@ -16,6 +16,11 @@ class indexController extends Controller
     {
         return $this->render('mainfiles/index.html.twig');
     }
-    
+    /**
+     * @Route("/test" , name="jobdetails")
+     */
+    public function test(){
+        return $this->render('mainfiles/job_details1.html.twig');
+    }
 }
 ?>

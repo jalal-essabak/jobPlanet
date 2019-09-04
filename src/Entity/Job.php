@@ -20,6 +20,10 @@ class Job
     {
         return $this->id;
     }
+    public function setId($id)
+    {
+        $this->id=$id;
+    }
     /**
      * @ORM\secteur()
      * @ORM\Column(type="text")
@@ -29,6 +33,10 @@ class Job
     public function getSecteur(): ?String 
     {
         return $this->secteur;
+    }
+    public function setSecteur($secteur) 
+    {
+        $this->secteur=$secteur;
     }
     /**
      * @ORM\description()
@@ -40,6 +48,10 @@ class Job
     {
         return $this->description;
     }
+    public function setDescription($description)
+    {
+        $this->description=$description;
+    }
     /**
      * @ORM\company_name()
      * @ORM\Column(type="text")
@@ -49,6 +61,10 @@ class Job
     public function getCompany_name(): ?String 
     {
         return $this->company_name;
+    }
+    public function setCompany_name($company_name) 
+    {
+        $this->company_name=$company_name;
     }
     /**
      * @ORM\nb_post()
@@ -60,4 +76,33 @@ class Job
     {
         return $this->nb_post;
     }
+    public function setNb_post($nb_post)
+    {
+        $this->nb_post=$nb_post;
+    }
+    /**
+     * @ORM\skills()
+     * @ORM\Column(type="array")
+     */
+    private $skills;
+
+    public function getSkills(){
+        return $this->skills;
+    }
+    public function setSkills($skills){
+        $this->skills=$skills;
+    }
+    /**
+     * @ORM\tasks()
+     * @ORM\Column(type="array")
+     */
+    private $tasks;
+
+    public function getTasks(){
+        return $this->tasks;
+    }
+    public function setTasks($tasks){
+        $this->tasks=$tasks;
+    }
+
 }

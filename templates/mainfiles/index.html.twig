@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Jobplanet - Responsive Job Board HTML Template </title>
+    <title>Jobplanet  </title>
 
     <!--favicon-->
     <link rel="apple-touch-icon" href="assets/theme/images/apple-touch-icon.png">
@@ -47,7 +47,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
               <ul class="nav navbar-nav">
-                <li class=""><a href="job_list.html"><strong>Find a Job</strong></a></li>
+                <li class=""><a href="http://localhost/projects/jobPlanet/public/job/find"><strong>Find a Job</strong></a></li>
                 <li class=""><a href="resume_list.html"><strong>Find Resumes</strong></a></li>
                 <li  class=""><a href="job_post_1.html"><strong>Post a Job</strong></a></li>
                 <li class="dropdown">
@@ -64,7 +64,7 @@
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Features <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="job_list.html">Find a Job</a></li>
+                    <li><a href="http://localhost/projects/jobPlanet/public/job/find">Find a Job</a></li>
                     <li><a href="job_details.html">Job Details</a></li>
                     <li><a href="resume_list.html">Find Resumes</a></li>
                     <li><a href="resume_details.html">Resume Details</a></li>
@@ -96,7 +96,7 @@
               </a>      
 
               <ul class="nav navbar-nav">
-                <li class=""><a href="job_list.html"><strong>Find a Job</strong></a></li>
+                <li class=""><a href="{{path('jobdetails')}}"><strong>Find a Job</strong></a></li>
                 <li class=""><a href="resume_list.html"><strong>Find Resumes</strong></a></li>
                 <li  class=""><a href="job_post_1.html"><strong>Post a Job</strong></a></li>
                 <li><a href="login.html"><strong>Login</strong></a></li>
@@ -115,7 +115,7 @@
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Features <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="job_list.html">Find a Job</a></li>
+                    <li><a href="http://localhost/projects/jobPlanet/public/job/find">Find a Job</a></li>
                     <li><a href="job_details.html">Job Details</a></li>
                     <li><a href="resume_list.html">Find Resumes</a></li>
                     <li><a href="resume_details.html">Resume Details</a></li>
@@ -131,27 +131,27 @@
         <div class="hero-header">
           <div class="inner-hero-header">
             <div class="container">
-              <div class="text-center logo"> <a href="index.html"><img src="assets/theme/images/logo.png" alt=""></a></div>
+              <div class="text-center logo"> <a href="http://localhost/projects/jobPlanet/public/"><img src="assets/theme/images/logo.png" alt=""></a></div>
               <div class="relative">
                 <i class="fa fa-globe ic-fade-globe"></i>
                 <!-- form search -->
-                <form class="form-search-home" method="post" action="job_list.html">
+                <form class="form-search-home" method="get" action="http://localhost/projects/jobPlanet/public/job/find/demo">
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
                         <label>What</label>
-                        <input class="form-control  input-lg" placeholder="job title, keywords or company name">
+                        <input class="form-control  input-lg" placeholder="job title, keywords or company name" name="job">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label>Where</label>
-                        <input class="form-control input-lg" placeholder="city, province, or region">
+                        <input class="form-control input-lg" placeholder="city, province, or region" name="locale">
                       </div>
                     </div>
                   </div>
                   <div class="form-group">
-                    <button class="btn btn-t-primary btn-lg btn-theme btn-pill btn-block">Find a Jobs</button>
+                    <button class="btn btn-t-primary btn-lg btn-theme btn-pill btn-block" type="submit" >Find a Jobs</button>
                   </div>
                   <div class="text-center">
                     <a href="#modal-advanced" data-toggle="modal">Advanced Job Search</a>
@@ -167,7 +167,7 @@
             <div class="modal-dialog ">
               <div class="modal-content">
                 <form>
-                  <div class="modal-header">
+                  <div class="modal-header" >
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">Advanced Job Search</h4>
                   </div>
