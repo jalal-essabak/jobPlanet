@@ -34,5 +34,17 @@ class jobController extends Controller
     public function details(){
         return $this->render('mainfiles/job_details1.html.twig');
     }
+    /**
+     * @Route("/postjob" , name="postjob")
+     */
+    public function postjob(){
+        return $this->render('mainfiles/job_post_1.html.twig');
+    }
+    /**
+     * @Route("/postjob/form" , name="post_form")
+     */
+    public function postform(){
+        return $this->render('mainfiles/job_post_2.html.twig');
+    }
 }
 ?>
