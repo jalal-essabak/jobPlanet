@@ -43,25 +43,23 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
               <ul class="nav navbar-nav">
-                <li class="active"><a href="http://localhost/projects/jobPlanet/public/fin/job"><strong>Find a Job</strong></a></li>
+                <li class="active"><a href="{{path('findjob')}}"><strong>Find a Job</strong></a></li>
                 <li class=""><a href="resume_list.html"><strong>Find Resumes</strong></a></li>
                 <li  class=""><a href="job_post_1.html"><strong>Post a Job</strong></a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Pages <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="blog.html">Articles &amp; Blog</a></li>
-                    <li><a href="terms_privacy.html">Terms &amp; Privacy</a></li>
-                    <li><a href="error_404.html">Error 404</a></li>
-                    <li><a href="shortcode.html">Short Code</a></li>
+                    <li><a href="{{path('about')}}">About Us</a></li>
+                    <li><a href="{{path('contact')}}">Contact Us</a></li>
+                    <li><a href="{{path('blog')}}">Articles &amp; Blog</a></li>
+                    <li><a href="{{path('privacy')}}">Terms &amp; Privacy</a></li>
                   </ul>
                 </li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Features <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="http://localhost/projects/jobPlanet/public/job/find">Find a Job</a></li>
-                    <li><a href="job_details.html">Job Details</a></li>
+                    <li><a href="{{path('findjob')}}">Find a Job</a></li>
+                    <li><a href="{{path('jobdetail')}}">Job Details</a></li>
                     <li><a href="resume_list.html">Find Resumes</a></li>
                     <li><a href="resume_details.html">Resume Details</a></li>
                     <li><a href="job_post_2.html">Post a Job</a></li>
@@ -70,8 +68,8 @@
                 </li>
               </ul>      
               <ul class="nav navbar-nav navbar-right">
-                <li class="link-btn"><a href="login.html"><span class="btn btn-theme btn-pill btn-xs btn-line">Login</span></a></li>
-                <li class="link-btn"><a href="register.html"><span class="btn btn-theme  btn-pill btn-xs btn-line">Register</span></a></li>
+                <li class="link-btn"><a href="{{path('login')}}"><span class="btn btn-theme btn-pill btn-xs btn-line">Login</span></a></li>
+                <li class="link-btn"><a href="r{{path('register')}}"><span class="btn btn-theme  btn-pill btn-xs btn-line">Register</span></a></li>
               </ul>
             </div>
           </div>
@@ -92,27 +90,25 @@
               </a>      
 
               <ul class="nav navbar-nav">
-                <li class="active"><a href="http://localhost/projects/jobPlanet/public/job/find"><strong>Find a Job</strong></a></li>
+                <li class="active"><a href="{{path('findjob')}}"><strong>Find a Job</strong></a></li>
                 <li class=""><a href="resume_list.html"><strong>Find Resumes</strong></a></li>
                 <li  class=""><a href="job_post_1.html"><strong>Post a Job</strong></a></li>
-                <li><a href="login.html"><strong>Login</strong></a></li>
-                <li><a href="register.html"><strong>Register</strong></a></li>
+                <li><a href="{{path('login')}}"><strong>Login</strong></a></li>
+                <li><a href="{{path('register')}}"><strong>Register</strong></a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Pages <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="blog.html">Articles &amp; Blog</a></li>
-                    <li><a href="terms_privacy.html">Terms &amp; Privacy</a></li>
-                    <li><a href="error_404.html">Error 404</a></li>
-                    <li><a href="shortcode.html">Short Code</a></li>
+                    <li><a href="{{path('about')}}">About Us</a></li>
+                    <li><a href="{{path('contact')}}">Contact Us</a></li>
+                    <li><a href="{{path('blog')}}">Articles &amp; Blog</a></li>
+                    <li><a href="{{path('privacy')}}">Terms &amp; Privacy</a></li>
                   </ul>
                 </li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Features <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="http://localhost/projects/jobPlanet/public/job/find">Find a Job</a></li>
-                    <li><a href="job_details.html">Job Details</a></li>
+                    <li><a href="{{path('findjob')}}">Find a Job</a></li>
+                    <li><a href="{{path('jobdetail')}}">Job Details</a></li>
                     <li><a href="resume_list.html">Find Resumes</a></li>
                     <li><a href="resume_details.html">Resume Details</a></li>
                     <li><a href="job_post_2.html">Post a Job</a></li>
@@ -131,12 +127,12 @@
 
             <div class="col-md-4">
               <!-- logo -->
-              <div class="logo text-center-sm"> <a href="http://localhost/projects/jobPlanet/public/"><img src={{ asset("assets/theme/images/logo.png")}} alt=""></a></div>
+              <div class="logo text-center-sm"> <a href="{{path('index')}}"><img src={{ asset("assets/theme/images/logo.png")}} alt=""></a></div>
             </div>
 
             <div class="col-md-8">
               <!-- form search -->
-              <form class="form-search-list" action="http://localhost/projects/jobPlanet/public/job/find/demo" method="GET">
+              <form class="form-search-list" action="{{path('jobresult')}}" method="GET">
                 <div class="row">
                   <div class="col-sm-5 col-xs-6 ">
                     <div class="form-group">
@@ -294,90 +290,6 @@
                     </div>
                   </div>
 
-                  <div class="result-filter">
-                    <h5 class="no-margin-top font-bold margin-b-20 " ><a href="#s_collapse_1" data-toggle="collapse" >Salary Estimate <i class="fa ic-arrow-toogle fa-angle-right pull-right"></i> </a></h5>
-                    <div class="collapse in" id="s_collapse_1">
-                      <div class="list-area">
-                        <ul class="list-unstyled">
-                          <li>
-                            <a  href="#" >$50,000+</a> (16947)
-                          </li>
-                          <li>
-                            <a  href="#" >$70,000+</a> (13915)
-                          </li>
-                          <li>
-                            <a  href="#" >$90,000+</a> (9398)
-                          </li>
-                          <li>
-                            <a  href="#" >$110,000+</a> (4112)
-                          </li>
-                          <li>
-                            <a  href="#" >$130,000+</a> (1864)
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-
-                    
-                    <h5 class="font-bold  margin-b-20"><a href="#s_collapse_2" data-toggle="collapse" >Title <i class="fa ic-arrow-toogle fa-angle-right pull-right"></i></a>  </h5>
-                    <div class="collapse in" id="s_collapse_2">
-                      <div class="list-area">
-                        <ul class="list-unstyled ">
-                          <li>
-                            <a  href="#" >web developer</a> (558)
-                          </li>
-                          <li>
-                            <a  href="#" >PHP Developer</a> (438)
-                          </li>
-                          <li>
-                            <a  href="#" >Software Engineer </a> (313)
-                          </li>
-                          <li>
-                            <a  href="#" >Senior Software Engineer </a> (169)
-                          </li>
-                          <li>
-                            <a  href="#" >Front End Developer </a> (156)
-                          </li>
-                          <li>
-                            <a  href="#" >More ... </a> 
-                          </li>
-                        </ul>
-
-                      </div>
-                    </div>
-
-                    <h5 class="font-bold  margin-b-20" ><a href="#s_collapse_4" data-toggle="collapse" class="collapsed" >Location  <i class="fa ic-arrow-toogle fa-angle-right pull-right"></i> </a></h5>
-                    <div class="collapse" id='s_collapse_4'>
-                      <div class="list-area">
-                        <ul class="list-unstyled ">
-                          <li>
-                            <a  href="#" >New York, NY </a> (558)
-                          </li>
-                          <li>
-                            <a  href="#" >San Francisco, CA </a> (438)
-                          </li>
-                          <li>
-                            <a  href="#" >Washington, DC </a> (313)
-                          </li>
-                          <li>
-                            <a  href="#" >Chicago, IL</a> (169)
-                          </li>
-                          <li>
-                            <a  href="#" >Austin, TX  </a> (156)
-                          </li>
-                          <li>
-                            <a  href="#" >More ... </a> 
-                          </li>
-                        </ul>
-
-                      </div>
-                    </div>
-
-
-
-
-
-                  </div>
                 </div>
 
 
@@ -457,10 +369,10 @@
           <div class="row">
             <div class="col-sm-6">
               <ul class="list-inline link-footer text-center-xs">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="{{path('index')}}">Home</a></li>
+                <li><a href="{{path('blog')}}">Blog</a></li>
+                <li><a href="{{path('about')}}">About Us</a></li>
+                <li><a href="{{path('contact')}}">Contact Us</a></li>
               </ul>
             </div>
             <div class="col-sm-6 ">

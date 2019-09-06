@@ -104,5 +104,5 @@ class Job
     public function setTasks($tasks){
         $this->tasks=$tasks;
     }
-
+    
 }
