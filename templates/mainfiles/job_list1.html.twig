@@ -25,15 +25,15 @@
 
                   <!-- item list -->  
                   <div class="box-list">
-                    
+                    {% for job in job_result %}
                       <!-- item list -->
                     <div class="item">
                       <div class="row">
-                        <div class="col-md-1 hidden-sm hidden-xs"><div class="img-item"><img src={{asset("./assets/theme/images/company-logo/2.jpg")}} alt=""></div></div>
+                        <!--<div class="col-md-1 hidden-sm hidden-xs"><div class="img-item"><img src={{asset("./assets/theme/images/company-logo/2.jpg")}} alt=""></div></div>-->
                         <div class="col-md-11">
-                          <h3 class="no-margin-top"><a href="job_details.html" class="">the job is {{job}} and the country is {{locale}} <i class="fa fa-link color-white-mute font-1x"></i></a></h3>
-                          <h5><span class="color-black">lorem upsem</span> </h5>
-                          <p class="text-truncate ">lorem upsem</p>
+                          <h3 class="no-margin-top"><a href="/test/{{job.secteur}}" class="">{{job.secteur}}<i class="fa fa-link color-white-mute font-1x"></i></a></h3>
+                          <h5><span class="color-black">{{job.company_name}}</span> </h5>
+                          <p class="text-truncate ">{{job.description}}</p>
                           <div>
                             <span class="color-white-mute">lorem upsem</span> -
                             <a href="#need-login" data-toggle="modal" class="btn btn-xs btn-theme btn-default">save job</a> - 
@@ -43,7 +43,7 @@
                         </div>
                       </div>
                     </div><!-- end item list -->
-                    
+                    {% endfor %}
                   </div>
 
 

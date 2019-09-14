@@ -25,7 +25,6 @@ class Job
         $this->id=$id;
     }
     /**
-     * @ORM\secteur()
      * @ORM\Column(type="text")
      */
     private $secteur;
@@ -39,7 +38,6 @@ class Job
         $this->secteur=$secteur;
     }
     /**
-     * @ORM\description()
      * @ORM\Column(type="text")
      */
     private $description;
@@ -52,8 +50,33 @@ class Job
     {
         $this->description=$description;
     }
+     /**
+     * @ORM\Column(type="text")
+     */
+    private $city;
+
+    public function getCity(): ?String
+    {
+        return $this->city;
+    }
+    public function setCity($city)
+    {
+        $this->city=$city;
+    }
+     /**
+     * @ORM\Column(type="text")
+     */
+    private $title;
+
+    public function getTitle(): ?String
+    {
+        return $this->title;
+    }
+    public function setTitle($title)
+    {
+        $this->title=$title;
+    }
     /**
-     * @ORM\company_name()
      * @ORM\Column(type="text")
      */
     private $company_name;
@@ -67,7 +90,6 @@ class Job
         $this->company_name=$company_name;
     }
     /**
-     * @ORM\nb_post()
      * @ORM\Column(type="text")
      */
     private $nb_post;
@@ -81,8 +103,7 @@ class Job
         $this->nb_post=$nb_post;
     }
     /**
-     * @ORM\skills()
-     * @ORM\Column(type="array")
+     * @ORM\Column(type="text")
      */
     private $skills;
 
@@ -93,8 +114,7 @@ class Job
         $this->skills=$skills;
     }
     /**
-     * @ORM\tasks()
-     * @ORM\Column(type="array")
+     * @ORM\Column(type="text")
      */
     private $tasks;
 
