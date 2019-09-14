@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Jobplanet - Responsive Job Board HTML Template </title>
-
+    <title>Jobplanet - Register </title>
     <!--favicon-->
     <link rel="apple-touch-icon" href="assets/theme/images/apple-touch-icon.png">
     <link rel="shortcut icon" href="assets/theme/images/favicon.ico" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- bootstrap -->
     <link href="assets/plugins/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="assets/plugins/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Icons -->
     <link href="assets/plugins/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
@@ -153,23 +153,32 @@
                     <div class="white-space-10"></div>
                     <p class="text-center"><span class="span-line">OR</span></p>
 
-                    <!-- form login -->
-                    <form>
+                    <!-- form login  -->
+                    <form  action={{path('registration')}} id="form"
+                    method="POST">
+                    <div class="form-group">
+                        <label>Nom</label>
+                        <input type="text" name="lastName" class="form-control" placeholder="Entrer votre nom" required>
+                      </div>
+                      <div class="form-group">
+                        <label>Prénom</label>
+                        <input type="text" name="firstName" class="form-control" placeholder="Entrer votre prénom" required>
+                      </div>
                       <div class="form-group">
                         <label>Email</label>
-                        <input type="email" class="form-control" placeholder="Your Email">
+                        <input type="email" name="email" class="form-control" placeholder="Entrer votre adresse email" required>
                       </div>
                       <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" class="form-control" placeholder="Your Password">
+                        <label>Mot de passe</label>
+                        <input type="password" name="password" class="form-control" placeholder="Entrer votre mot de passe">
                       </div>
                       <div class="form-group">
-                        <label>Re-type Password</label>
-                        <input type="password" class="form-control" placeholder="Re-type Your Password">
+                        <label>Confirmation du mot de passe</label>
+                        <input type="password" class="form-control" name="password-confirmation" placeholder="Confirmer votre mot de passe">
                       </div>
                       <div class="white-space-10"></div>
                       <div class="form-group no-margin">
-                        <button class="btn btn-theme btn-lg btn-t-primary btn-block">Register</button>
+                        <button id="submit" class="btn btn-theme btn-lg btn-t-primary btn-block" type="submit">Register</button>
                       </div>
                     </form><!-- form login -->
 
@@ -242,6 +251,7 @@
     <script src="assets/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
     <!-- Theme JS -->
     <script src="assets/theme/js/theme.js"></script>
+    <script src="assets/theme/js/validation.js"></script>
 
     <!-- maps -->
     <script src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script> 

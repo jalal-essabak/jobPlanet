@@ -7,6 +7,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use App\Entity\Job;
+use App\Entity\Task;
 
 class jobController extends Controller
 {   
@@ -46,5 +48,26 @@ class jobController extends Controller
     public function postform(){
         return $this->render('mainfiles/job_post_2.html.twig');
     }
+
+    /**
+     * @Route("/job/form", name="form-submit")
+     */
+    public function jobFormSubmit(Request $request){
+        
+        $job = new Job();
+        $entityManager = $this->getDoctrine()->getManager();
+        
+        $job->setCompany_name($request->get('company'));
+        $job->setDescription($request->get('description'));
+        $job->setJob_title($request->get('title'));
+        $job->setSecteur($request->get('category'));        
+        $job->setNb_post(33);
+        $job->setLocation($request->get('location'));
+        $entityManager->persist($job);
+        $entityManager->flush();
+        
+        return $this->render('mainfiles/test.html.twig',['job'=>$job]);
+    }
+
 }
 ?>

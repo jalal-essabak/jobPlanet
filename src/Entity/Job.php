@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -25,9 +27,9 @@ class Job
         $this->id=$id;
     }
     /**
-     * @ORM\secteur()
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string")
      */
+
     private $secteur;
 
     public function getSecteur(): ?String 
@@ -39,7 +41,6 @@ class Job
         $this->secteur=$secteur;
     }
     /**
-     * @ORM\description()
      * @ORM\Column(type="text")
      */
     private $description;
@@ -53,8 +54,7 @@ class Job
         $this->description=$description;
     }
     /**
-     * @ORM\company_name()
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string")
      */
     private $company_name;
 
@@ -66,9 +66,26 @@ class Job
     {
         $this->company_name=$company_name;
     }
+
+
+     /**
+     * @ORM\Column(type="string")
+     */
+    private $job_title;
+
+    public function getJob_title(): ?String 
+    {
+        return $this->job_title;
+    }
+    public function setJob_title($job_title) 
+    {
+        $this->job_title=$job_title;
+    }
+
+
+
     /**
-     * @ORM\nb_post()
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="integer")
      */
     private $nb_post;
 
@@ -80,29 +97,20 @@ class Job
     {
         $this->nb_post=$nb_post;
     }
-    /**
-     * @ORM\skills()
-     * @ORM\Column(type="array")
-     */
-    private $skills;
-
-    public function getSkills(){
-        return $this->skills;
-    }
-    public function setSkills($skills){
-        $this->skills=$skills;
-    }
-    /**
-     * @ORM\tasks()
-     * @ORM\Column(type="array")
-     */
-    private $tasks;
-
-    public function getTasks(){
-        return $this->tasks;
-    }
-    public function setTasks($tasks){
-        $this->tasks=$tasks;
-    }
     
+    
+     /**
+     * @ORM\Column(type="string")
+     */
+    private $location;
+
+    public function getLocation(){
+        return $this->location;
+    }
+    public function setLocation($location){
+        $this->location=$location;
+    }
+
+
+
 }
