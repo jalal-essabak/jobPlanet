@@ -53,6 +53,32 @@ class Job
     {
         $this->description=$description;
     }
+     /**
+     * @ORM\Column(type="text")
+     */
+    private $city;
+
+    public function getCity(): ?String
+    {
+        return $this->city;
+    }
+    public function setCity($city)
+    {
+        $this->city=$city;
+    }
+     /**
+     * @ORM\Column(type="text")
+     */
+    private $title;
+
+    public function getTitle(): ?String
+    {
+        return $this->title;
+    }
+    public function setTitle($title)
+    {
+        $this->title=$title;
+    }
     /**
      * @ORM\Column(type="string")
      */
