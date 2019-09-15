@@ -14,35 +14,35 @@ class indexController extends Controller
      */
     public function index()
     {
-        return $this->render('mainfiles/index.html.twig');
+        return $this->render('index/index.html.twig');
     }
     /**
      * @Route("/about" , name="about" )
      */
     public function about()
     {
-        return $this->render('mainfiles/about.html.twig');
+        return $this->render('index/about.html.twig');
     }
     /**
      * @Route("/contact" , name="contact" )
      */
     public function contact()
     {
-        return $this->render('mainfiles/contact.html.twig');
+        return $this->render('index/contact.html.twig');
     }
     /**
      * @Route("/blog" , name="blog" )
      */
     public function blog()
     {
-        return $this->render('mainfiles/blog.html.twig');
+        return $this->render('index/blog.html.twig');
     }
     /**
      * @Route("/privacy" , name="privacy" )
      */
     public function privacy()
     {
-        return $this->render('mainfiles/terms_privacy.html.twig');
+        return $this->render('index/terms_privacy.html.twig');
     }
 
     

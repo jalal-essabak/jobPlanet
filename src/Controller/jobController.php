@@ -19,7 +19,7 @@ class jobController extends Controller
      */
     public function findJob()
     {
-        return $this->render('mainfiles/job_list.html.twig');
+        return $this->render('job/job_list.html.twig');
     }
     /**
      * @Route("/job/find/demo" , name="jobresult")
@@ -28,25 +28,25 @@ class jobController extends Controller
            $this->job = $request->query->get('job');
            $this->locale = $request->query->get('locale');
            //$job=$this->getDoctrine()->getRepository(job::class)->find($job,$locale);
-           return $this->render('mainfiles/job_list1.html.twig',array('job' => $this->job , 'locale' => $this->locale));
+           return $this->render('job/job_list1.html.twig',array('job' => $this->job , 'locale' => $this->locale));
     }
     /**
      * @Route("/test" , name="jobdetail")
      */
     public function details(){
-        return $this->render('mainfiles/job_details1.html.twig');
+        return $this->render('job/job_details1.html.twig');
     }
     /**
      * @Route("/postjob" , name="postjob")
      */
     public function postjob(){
-        return $this->render('mainfiles/job_post_1.html.twig');
+        return $this->render('job/job_post_index.html.twig');
     }
     /**
      * @Route("/postjob/form" , name="post_form")
      */
     public function postform(){
-        return $this->render('mainfiles/job_post_2.html.twig');
+        return $this->render('job/job_post_form.html.twig');
     }
 
     /**

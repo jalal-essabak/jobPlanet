@@ -14,19 +14,19 @@ class authentificationController extends Controller
      * @Route("/login" , name="login")
      */
     public function login(){
-        return $this->render('mainfiles/login.html.twig');
+        return $this->render('user/login.html.twig');
     }
     /**
      * @Route("/register" , name="register")
      */
     public function register(){
-        return $this->render('mainfiles/register.html.twig');
+        return $this->render('user/register.html.twig');
     }
     /**
      * @Route("/changepass" , name="changepass")
      */
     public function changepass(){
-        return $this->render('mainfiles/change_password.html.twig');
+        return $this->render('user/change_password.html.twig');
     }
   
 }
