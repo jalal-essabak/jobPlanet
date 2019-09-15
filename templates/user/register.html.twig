@@ -79,6 +79,11 @@
                     <div class="white-space-10"></div>
                     <h3 class="text-center">Créer un compte</h4>
                       <hr/>
+                      {% if error is defined %}
+                      {% if error %}
+                     <h5 style="color:red;font-weight:bold;">Cette adresse e-mail existe déjà.</h5>
+                      {% endif %}
+                      {% endif %}
                     <!-- form login  -->
                     <form  action={{path('registration')}} id="form"
                     method="POST">
