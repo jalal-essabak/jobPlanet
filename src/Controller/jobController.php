@@ -23,22 +23,24 @@ class jobController extends Controller
      * @Route("/job/find" , name="findjob")
      */
     public function findJob()
-    {
-        return $this->render('job/job_list.html.twig');
+    {   
+        $repository = $this->getDoctrine()->getRepository(Job::class);
+        $job_result = $repository->findall();
+        return $this->render('job/job_list.html.twig',array('job_result'=>$job_result));
     }
     /**
      * @Route("/job/find/demo" , name="jobresult")
      */
     public function search(Request $request){
            $job_result=$this->getJob($request);
-           return $this->render('mainfiles/job_list1.html.twig',array('job_result' => $job_result));
+           return $this->render('job/job_list1.html.twig',array('job_result' => $job_result));
     }
     /**
      * @Route("/test/{secteur}" )
      */
     public function details($secteur){
         $job=$this->getDoctrine()->getRepository(Job::class)->finddetail($secteur); 
-        return $this->render('mainfiles/job_details1.html.twig',array('job' => $job));
+        return $this->render('job/job_details1.html.twig',array('job' => $job));
     }
     /**
      * @Route("/postjob" , name="postjob")
