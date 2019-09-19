@@ -52,7 +52,7 @@ class JobRepository extends ServiceEntityRepository
     public function finddetail($value)
     {
         return $this->createQueryBuilder('j')
-            ->Where('j.secteur like :val')
+            ->Where('j.title like :val')
             ->setParameter('val', $value)
             ->getQuery()
             ->getSingleResult()

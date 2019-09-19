@@ -137,6 +137,18 @@ class Job
         $this->location=$location;
     }
 
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $skills;
+
+    public function getSkills(){
+        return $this->skills;
+    }
+    public function setSkills($location){
+        $this->skills=$skills;
+    }
+
 
 
 }

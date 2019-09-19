@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Job;
+use App\Entity\Company;
 
 class jobController extends Controller
 {   
@@ -40,7 +41,7 @@ class jobController extends Controller
      */
     public function details($secteur){
         $job=$this->getDoctrine()->getRepository(Job::class)->finddetail($secteur); 
-        return $this->render('job/job_details1.html.twig',array('job' => $job));
+        return $this->render('job/job_details.html.twig',array('job' => $job));
     }
     /**
      * @Route("/postjob" , name="postjob")
@@ -49,10 +50,31 @@ class jobController extends Controller
         return $this->render('job/job_post_index.html.twig');
     }
     /**
+     * @Route("/postjob/company" , name="company")
+     */
+    public function registerCompany(){
+        return $this->render('job/company_registration.html.twig');
+    }
+
+    /**
      * @Route("/postjob/form" , name="post_form")
      */
-    public function postform(){
+    public function postform(Request $request){
+        $company = new Company();
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $company->setCompany ($request->get('company'));
+        $company->setEmail ($request->get('email'));
+        $company->setTelephone ($request->get('telephone'));
+        $company->setAdresse ($request->get('adresse'));
+        $company->setlocation ($request->get('location'));
+        $company->setCategory ($request->get('category'));
+
+        $entityManager->persist($company);
+        $entityManager->flush();
+
         return $this->render('job/job_post_form.html.twig');
+        
     }
 
     /**
