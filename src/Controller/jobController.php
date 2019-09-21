@@ -26,7 +26,7 @@ class jobController extends Controller
     public function findJob()
     {   
         $repository = $this->getDoctrine()->getRepository(Job::class);
-        $job_result = $repository->findall();
+        $job_result = $repository->findByConfirmation(1);
         return $this->render('job/job_list.html.twig',array('job_result'=>$job_result));
     }
     /**
@@ -60,6 +60,9 @@ class jobController extends Controller
      * @Route("/postjob/form" , name="post_form")
      */
     public function postform(Request $request){
+        
+        
+
         $company = new Company();
         $entityManager = $this->getDoctrine()->getManager();
 
@@ -69,11 +72,14 @@ class jobController extends Controller
         $company->setAdresse ($request->get('adresse'));
         $company->setlocation ($request->get('location'));
         $company->setCategory ($request->get('category'));
+        $company->setPassword ($request->get('password'));
+
 
         $entityManager->persist($company);
         $entityManager->flush();
 
-        return $this->render('job/job_post_form.html.twig');
+        
+        return $this->render('job/job_post_form.html.twig'); 
         
     }
 

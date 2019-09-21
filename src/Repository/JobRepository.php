@@ -42,6 +42,7 @@ class JobRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('j')
             ->Where('j.secteur like :val1')
             ->AndWhere('j.location like :val2')
+            ->AndWhere('j.confirmation =:1')
             ->setParameter('val1', $value1)
             ->setParameter('val2', $value2)
             ->getQuery()

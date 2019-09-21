@@ -149,6 +149,20 @@ class Job
         $this->skills=$skills;
     }
 
+    /**
+     * @ORM\Column(type="boolean" ,options={"default" : 0})
+     */
+    private $confirmation = false ;
+
+    public function getConfirmation(): ?boolean 
+    {
+        return $this->confirmation;
+    }
+    public function setConfirmation($confirmation) 
+    {
+        $this->confirmation=$confirmation;
+    }
+
 
 
 }
