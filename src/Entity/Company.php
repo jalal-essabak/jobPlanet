@@ -52,6 +52,11 @@ class Company
     private $password;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    private $confirmed;
+
+    /**
      * @ORM\Column(type="boolean",options={"default": false})
      */
     
@@ -141,6 +146,18 @@ class Company
     public function setPassword(string $password): self
     {
         $this->password = $password;
+
+        return $this;
+    }
+
+    public function getConfirmed(): ?bool
+    {
+        return $this->confirmed;
+    }
+
+    public function setConfirmed(bool $confirmed): self
+    {
+        $this->confirmed = $confirmed;
 
         return $this;
     }

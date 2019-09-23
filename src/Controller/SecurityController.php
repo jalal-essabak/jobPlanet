@@ -101,7 +101,7 @@ class SecurityController extends AbstractController
         $entityManager->persist($company);
         $entityManager->flush();
         
-        return $this->redirectToRoute('admin_index');
+        return $this->redirectToRoute('confirm_registrations');
     }
     /**
      * @Route("/admin/jobs", name="confirm_jobs")

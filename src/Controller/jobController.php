@@ -73,14 +73,12 @@ class jobController extends Controller
         $company->setlocation ($request->get('location'));
         $company->setCategory ($request->get('category'));
         $company->setPassword ($request->get('password'));
-
-
+        $company->setConfirmed (false);
         $entityManager->persist($company);
         $entityManager->flush();
 
         
-        return $this->render('job/job_post_form.html.twig'); 
-        
+        return $this->redirectToRoute('findjob');        
     }
 
     /**
