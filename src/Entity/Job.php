@@ -56,15 +56,15 @@ class Job
      /**
      * @ORM\Column(type="text")
      */
-    private $title;
+    private $job_title;
 
-    public function getTitle(): ?String
+    public function getJob_title(): ?String
     {
-        return $this->title;
+        return $this->job_title;
     }
-    public function setTitle($title)
+    public function setJob_title($title)
     {
-        $this->title=$title;
+        $this->job_title=$title;
     }
     /**
      * @ORM\Column(type="string")
@@ -115,7 +115,7 @@ class Job
     public function getSkills(){
         return $this->skills;
     }
-    public function setSkills($location){
+    public function setSkills($skills){
         $this->skills=$skills;
     }
 
