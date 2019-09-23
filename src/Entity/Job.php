@@ -56,19 +56,6 @@ class Job
      /**
      * @ORM\Column(type="text")
      */
-    private $city;
-
-    public function getCity(): ?String
-    {
-        return $this->city;
-    }
-    public function setCity($city)
-    {
-        $this->city=$city;
-    }
-     /**
-     * @ORM\Column(type="text")
-     */
     private $title;
 
     public function getTitle(): ?String
@@ -92,6 +79,7 @@ class Job
     {
         $this->company_name=$company_name;
     }
+
     /**
      * @ORM\Column(type="integer")
      */
@@ -106,6 +94,19 @@ class Job
         $this->nb_post=$nb_post;
     }
     
+    
+     /**
+     * @ORM\Column(type="string")
+     */
+    private $location;
+
+    public function getLocation(){
+        return $this->location;
+    }
+    public function setLocation($location){
+        $this->location=$location;
+    }
+
     /**
      * @ORM\Column(type="string")
      */

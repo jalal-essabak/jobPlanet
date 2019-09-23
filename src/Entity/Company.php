@@ -54,7 +54,7 @@ class Company
     /**
      * @ORM\Column(type="boolean",options={"default": false})
      */
-    private $confirmed;
+    
 
     public function getId(): ?int
     {
@@ -145,16 +145,5 @@ class Company
         return $this;
     }
 
-    public function getConfirmed(): ?bool
-    {
-        return $this->confirmed;
-    }
-
-    public function setConfirmed(bool $confirmed): self
-    {
-        $this->confirmed = $confirmed;
-
-        return $this;
-    }
 
 }

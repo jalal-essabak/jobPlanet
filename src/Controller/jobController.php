@@ -93,10 +93,11 @@ class jobController extends Controller
         
         $job->setCompany_name($request->get('company'));
         $job->setDescription($request->get('description'));
-        $job->setJob_title($request->get('title'));
+        $job->settitle($request->get('title'));
         $job->setSecteur($request->get('category'));        
         $job->setNb_post(33);
         $job->setLocation($request->get('location'));
+        
         $entityManager->persist($job);
         $entityManager->flush();
         
