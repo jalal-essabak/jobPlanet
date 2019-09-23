@@ -3,9 +3,12 @@
 namespace App\Controller;
 use App\Entity\Company;
 use App\Entity\Job;
+use App\Entity\Admin;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
@@ -53,7 +56,34 @@ class SecurityController extends AbstractController
      * @Security("has_role('ROLE_ADMIN')")
      */
     public function changePassword(){
-        return $this->render('security/index.html.twig');
+        return $this->render('security/change_password.html.twig');
+    }
+           /**
+     * @Route("/admin/change-password/{id}", name="admin_password_change_submit")
+     * @Security("has_role('ROLE_ADMIN')")
+     */
+    public function changePasswordSubmit($id,UserPasswordEncoderInterface $encoder,Request $request){
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $admin = $this->getDoctrine()
+        ->getRepository(Admin::class)
+        ->find($id);
+
+        $plainOldPassword = $request->get('old_password');
+        $plainNewPassword = $request->get('new_password');
+
+        if($admin==null || !$encoder->isPasswordValid($admin,$plainOldPassword)){
+            return $this->render('security/change_password.html.twig',['msg'=>'Ancien mot de passe invalide',"color"=>"red"]);
+        }
+        else{
+            $encodedNewPassword = $encoder->encodePassword($admin, $plainNewPassword);
+            $admin->setPassword($encodedNewPassword);
+            $entityManager->persist($admin);
+            $entityManager->flush();
+            return $this->render('security/change_password.html.twig',['msg'=>'Votre mot de passe a été modifié avec succès!',"color"=>"green"]);
+        }
+      
+
     }
 
     /**

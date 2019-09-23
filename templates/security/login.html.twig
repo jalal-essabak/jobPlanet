@@ -14,13 +14,10 @@
                                 <h3 class="text-center">Connexion</h3>
                                 <hr>
                                 <!-- form login -->
-                                {% if error is defined %}
-                                    <h3>jqsdjqsdjqs
-                                        {{dump(error)}}</h3>
                                     {% if error %}
                                         <h5 style="color:red;font-weight:bold;">Les identifiants sont incorrects</h5>
                                     {% endif %}
-                                {% endif %}
+                              
                                 <form action={{path('app_login')}} method="POST">
                                     <input type="hidden" name="referer" value="{{app.request.headers.get('referer')}}"/>
                                     <div class="form-group">
