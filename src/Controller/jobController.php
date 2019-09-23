@@ -27,7 +27,7 @@ class jobController extends Controller
     {   
         $repository = $this->getDoctrine()->getRepository(Job::class);
         $job_result = $repository->findByConfirmation(1);
-        return $this->render('job/job_list.html.twig',array('job_result'=>$job_result));
+        return $this->render('job/job_list1.html.twig',array('job_result'=>$job_result));
     }
     /**
      * @Route("/job/find/demo" , name="jobresult")
