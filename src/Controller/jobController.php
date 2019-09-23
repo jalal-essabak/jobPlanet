@@ -37,10 +37,10 @@ class jobController extends Controller
            return $this->render('job/job_list1.html.twig',array('job_result' => $job_result));
     }
     /**
-     * @Route("/test/{secteur}" )
+     * @Route("/test/{id}" )
      */
-    public function details($secteur){
-        $job=$this->getDoctrine()->getRepository(Job::class)->finddetail($secteur); 
+    public function details($id){
+        $job=$this->getDoctrine()->getRepository(Job::class)->finddetail($id); 
         return $this->render('job/job_details.html.twig',array('job' => $job));
     }
     /**
@@ -94,9 +94,11 @@ class jobController extends Controller
         $job->setCompany_name($request->get('company'));
         $job->setDescription($request->get('description'));
         $job->setJob_title($request->get('title'));
-        $job->setSecteur($request->get('category'));        
+        $job->setSecteur($request->get('category'));
+        $job->setSkills($request->get('competences'));        
         $job->setNb_post(33);
         $job->setLocation($request->get('location'));
+        $job->setConfirmation(0);
         $entityManager->persist($job);
         $entityManager->flush();
         
