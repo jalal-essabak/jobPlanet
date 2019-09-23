@@ -59,5 +59,18 @@ class JobRepository extends ServiceEntityRepository
             ->getSingleResult()
         ;
     }
+    /**
+      * @return Job[] Returns an array of Job objects
+    */
+    
+    public function findNonConfirmedJobs()
+    {
+        return $this->createQueryBuilder('j')
+            ->andWhere('j.confirmation = :val')
+            ->setParameter('val', 0)
+            ->orderBy('j.id', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
      
 }

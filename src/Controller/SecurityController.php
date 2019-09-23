@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Controller;
-
+use App\Entity\Company;
+use App\Entity\Job;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -36,11 +37,61 @@ class SecurityController extends AbstractController
     }
 
      /**
-     * @Route("/admin", name="admin_index")
+     * @Route("/admin", name="confirm_registrations")
      * @Security("has_role('ROLE_ADMIN')")
      */
     public function index(){
+
+        $companies = $this->getDoctrine()
+        ->getRepository(Company::class)
+        ->findNonConfirmedCompanies();
+        return $this->render('security/index.html.twig',['companies'=>$companies]);
+    }
+
+       /**
+     * @Route("/admin/change-password", name="admin_password_change")
+     * @Security("has_role('ROLE_ADMIN')")
+     */
+    public function changePassword(){
         return $this->render('security/index.html.twig');
     }
-    
+
+    /**
+     * @Route("/admin/confirm-company/{id}", name="confirm_company")
+     * @Security("has_role('ROLE_ADMIN')")
+     */
+    public function confirmCompany($id){
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $company = $this->getDoctrine()
+        ->getRepository(Company::class)
+        ->find($id);
+        $company->setConfirmed(true);
+
+        $entityManager->persist($company);
+        $entityManager->flush();
+        
+        return $this->redirectToRoute('admin_index');
+    }
+    /**
+     * @Route("/admin/jobs", name="confirm_jobs")
+     * @Security("has_role('ROLE_ADMIN')")
+     */
+    public function confirmJobs(){
+
+        $jobs = $this->getDoctrine()
+        ->getRepository(Job::class)
+        ->findNonConfirmedJobs();
+
+        return $this->render('security/jobs.html.twig',['jobs'=>$jobs]);
+
+    }
+    /**
+     * @Route("/admin/confirm-job/{id}", name="confirm_job")
+     * @Security("has_role('ROLE_ADMIN')")
+     */
+    public function confirmJob($id){
+        
+        
+    }
 }

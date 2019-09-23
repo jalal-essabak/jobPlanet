@@ -47,9 +47,9 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
               <ul class="nav navbar-nav">
-                <li class=""><a href="job_list.html"><strong>Inscriptions en attente</strong></a></li>
-                <li class=""><a href="resume_list.html"><strong>Offres d'emploi en attente</strong></a></li>
-                <li  class=""><a href="job_post_1.html"><strong>Post a Job</strong></a></li>
+                <li class=""><a href="{{path('confirm_registrations')}}"><strong>Inscriptions en attente</strong></a></li>
+                <li class=""><a href="{{path('confirm_jobs')}}"><strong>Offres d'emploi en attente</strong></a></li>
+                <li  class=""><a href="{{path('admin_password_change')}}"><strong>Modifier votre mot de passe</strong></a></li>
               </ul>      
               {% if app.user %}
                 <ul class="nav navbar-nav navbar-right">
@@ -60,7 +60,7 @@
                         </a>
                         <ul class="dropdown-menu" role="menu">
                             <li>
-                                <a href="">
+                                <a href="{{path('admin_password_change')}}">
                                     Change Password</a>
                             </li>
                         </ul>
@@ -68,19 +68,6 @@
                     <li class="link-btn">
                         <a href="{{path('admin_logout')}}">
                             <span class="btn btn-theme  btn-pill btn-xs btn-line">Logout</span>
-                        </a>
-                    </li>
-                </ul>
-            {% else %}
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="link-btn">
-                        <a href="{{path('app_login')}}">
-                            <span class="btn btn-theme btn-pill btn-xs btn-line">Login</span>
-                        </a>
-                    </li>
-                    <li class="link-btn">
-                        <a href="{{path('register')}}">
-                            <span class="btn btn-theme  btn-pill btn-xs btn-line">Register</span>
                         </a>
                     </li>
                 </ul>
@@ -120,37 +107,22 @@
                       </tr>
                     </thead>
                     <tbody>
+                    {% for company in companies %}
                       <tr>
-                        <th scope="row">1</th>
-                        <td>Php Developer</td>
-                        <td>United States</td>
-                        <td>Php Developer</td>
-                        <td>Php Developer</td>
-
-                        <td class="text-right"><a href="#" class="btn btn-theme btn-xs btn-success">Confirmer</a></td>
+                        <th scope="row">{{company.id}}</th>
+                        <td>{{company.company}}</td>
+                        <td>{{company.email}}</td>
+                        <td>{{company.telephone}}</td>
+                        <td>{{company.adresse}}</td>
+                        <td class="text-right"><a href="{{path('confirm_company',{'id':company.id})}}" class="btn btn-theme btn-xs btn-success">Confirmer</a></td>
                       </tr>
+                      {% endfor %}
                     </tbody>
                   </table>
                 </div>
 
                 <!-- pagination -->
-                <nav >
-                  <ul class="pagination pagination-theme  ">
-                    <li>
-                      <a href="#" aria-label="Previous">
-                        <span aria-hidden="true">&larr;</span>
-                      </a>
-                    </li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li>
-                      <a href="#" aria-label="Next">
-                        <span aria-hidden="true">&rarr;</span>
-                      </a>
-                    </li>
-                  </ul>
-                </nav><!-- pagination -->
+   
 
               </div>
             </div>
