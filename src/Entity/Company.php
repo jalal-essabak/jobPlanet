@@ -3,11 +3,12 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CompanyRepository")
  */
-class Company
+class Company implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -56,10 +57,15 @@ class Company
      */
     private $confirmed;
 
-    /**
-     * @ORM\Column(type="boolean",options={"default": false})
+     /**
+     * @ORM\Column(type="string",nullable=true)
      */
-    
+    private $username;
+
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $roles = [];
 
     public function getId(): ?int
     {
@@ -160,6 +166,56 @@ class Company
         $this->confirmed = $confirmed;
 
         return $this;
+    }
+
+    /**
+     * A visual identifier that represents this user.
+     */
+    public function getUsername(): string
+    {
+        return $this->email;
+    }
+
+    public function setUsername(string $username): self
+    {
+        $this->email = $username;
+
+        return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_COMPANY';
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+        /**
+     * @see UserInterface
+     */
+    public function getSalt()
+    {
+        // not needed when using the "bcrypt" algorithm in security.yaml
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 
 

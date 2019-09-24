@@ -11,6 +11,8 @@ security:
             algorithm: 'auto'
         App\Entity\Admin:
             algorithm: auto
+        App\Entity\Company:
+            algorithm: auto
 
     firewalls:
         dev:

@@ -64,14 +64,15 @@ class UserController extends AbstractController
         $user = $this->getDoctrine()
         ->getRepository('App\Entity\User')
         ->findOneBy(array('email' => $userEmail));
+        $uri = $request->getUri();
 
         if($user==null || !$encoder->isPasswordValid($user,$userPlainPassword)){
-            return $this->render('user/login.html.twig',['error'=>true,'email'=>$userEmail]);
+            return $this->render('user/login.html.twig',['error'=>true,'email'=>$companyEmail]);
         }
         else{
             return $this->redirectToRoute('index');
         }
-        return $this->render('mainfiles/test.html.twig',['result'=>$result,'email'=>$userEmail]);
+        return $this->render('mainfiles/test.html.twig',['result'=>$result,'email'=>$companyEmail]);
     }
 
 }   

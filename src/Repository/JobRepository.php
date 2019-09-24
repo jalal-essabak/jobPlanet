@@ -40,7 +40,7 @@ class JobRepository extends ServiceEntityRepository
     public function findAllJobs($value1,$value2)
     {
         return $this->createQueryBuilder('j')
-            ->Where('j.title like :val1')
+            ->Where('j.job_title like :val1')
             ->AndWhere('j.location like :val2')
             ->AndWhere('j.confirmation = :val')
             ->setParameter('val1', '%'.$value1.'%')

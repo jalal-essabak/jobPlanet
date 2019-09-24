@@ -11,17 +11,12 @@ use Symfony\Component\HttpFoundation\Request;
 class authentificationController extends Controller
 {   
     /**
-     * @Route("/login" , name="login")
+     * @Route("/login" , name="login2")
      */
     public function login(){
-        return $this->render('user/login.html.twig');
+        return $this->render('company/login.html.twig');
     }
-    /**
-     * @Route("/register" , name="register")
-     */
-    public function register(){
-        return $this->render('user/register.html.twig');
-    }
+ 
     /**
      * @Route("/changepass" , name="changepass")
      */
