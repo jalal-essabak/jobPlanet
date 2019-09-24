@@ -77,11 +77,17 @@ class CompanyController extends AbstractController
 
         if($user==null || !$encoder->isPasswordValid($user,$userPlainPassword)){
 
-            return $this->render('company/login.html.twig',['error'=>true,'email'=>$companyEmail]);
+            return $this->render('company/login.html.twig',['error'=>"Les identifiants sont incorrects",'email'=>$companyEmail]);
         }
         else{
-            $session->set('company', $user);
-            return $this->redirectToRoute('index');
+            if($user->getConfirmed()==0){
+                return $this->render('company/login.html.twig',['error'=>"Votre compte n'est pas encore confirmé",'email'=>$companyEmail]);
+            }
+            else {
+                $session->set('company', $user);
+                return $this->redirectToRoute('index');
+            }
+     
         }
         
     }

@@ -121,7 +121,17 @@ class SecurityController extends AbstractController
      * @Security("has_role('ROLE_ADMIN')")
      */
     public function confirmJob($id){
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $job = $this->getDoctrine()
+        ->getRepository(Job::class)
+        ->find($id);
+        $job->setConfirmation(true);
+
+        $entityManager->persist($job);
+        $entityManager->flush();
         
+        return $this->redirectToRoute('confirm_jobs');
         
     }
 }

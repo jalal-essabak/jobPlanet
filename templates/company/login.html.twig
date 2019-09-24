@@ -86,7 +86,7 @@
                     <!-- form login -->
                      {% if error is defined %}
                  {% if error %}
-                 <h5 style="color:red;font-weight:bold;">Les identifiants sont incorrects</h5>
+                 <h5 style="color:red;font-weight:bold;">{{error}}</h5>
                  {% endif %}
                  {% endif %}
                     <form action={{path('company_login')}} method="POST">
