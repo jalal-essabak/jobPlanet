@@ -53,7 +53,19 @@ class Job
     {
         $this->description=$description;
     }
-    
+     /**
+     * @ORM\Column(type="text")
+     */
+    private $job_title;
+
+    public function getJob_title(): ?String
+    {
+        return $this->job_title;
+    }
+    public function setJob_title($title)
+    {
+        $this->job_title=$title;
+    }
     /**
      * @ORM\Column(type="string")
      */
@@ -67,23 +79,6 @@ class Job
     {
         $this->company_name=$company_name;
     }
-
-
-     /**
-     * @ORM\Column(type="string")
-     */
-    private $job_title;
-
-    public function getJob_title(): ?String 
-    {
-        return $this->job_title;
-    }
-    public function setJob_title($job_title) 
-    {
-        $this->job_title=$job_title;
-    }
-
-
 
     /**
      * @ORM\Column(type="integer")
@@ -127,7 +122,7 @@ class Job
     /**
      * @ORM\Column(type="boolean" ,options={"default" : 0})
      */
-    private $confirmation = false ;
+    private $confirmation ;
 
     public function getConfirmation(): ?boolean 
     {

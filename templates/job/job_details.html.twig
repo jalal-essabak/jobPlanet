@@ -8,10 +8,10 @@
           <div class="container">
             <div class="row">
               <div class="col-sm-6 hidden-xs">
-                <div>Job details :</div>
+                <div>detail de l'offre :</div>
               </div>
               <div class="col-sm-6">
-                <div class="text-right"><a href="{{path('findjob')}}">&laquo; Go back to job listings</a></div>
+                <div class="text-right"><a href="{{path('findjob')}}">&laquo; retour à la liste des offres</a></div>
               </div>
             </div>
           </div>
@@ -29,7 +29,7 @@
                       <a href="company_page.html"><img src="./assets/theme/images/patner/4.png" alt=""></a>
                     </div>
                     <div class="col-md-4">
-                      <p class="text-right"><a href="#">Go to our website &raquo;</a></p>
+                      <p class="text-right"><a href="#">aller à notre site-web &raquo;</a></p>
                     </div>
                   </div>
 
@@ -44,10 +44,10 @@
                     Krossover is looking for a Web Application Developer to join our team of smart developers. We build web and mobile applications and games for coaches, athletes and fans. If you're a talented programmer, and like sports and sports analytics, this is the position for you.</p>
                   <p>Our ideal candidate is technically curious, has a solid understanding of OOP and web development, and wants to build applications that improve people's lives.</p>
                   <p>We're interested in filling this position on either a contract or full-time basis. </p>
-
-                  <h4>What you'll do:</h4>
                   <p>{{job.description}}</p>
+
                   <h4>What we're looking for:</h4>
+
                   {{job.skills}}
                   <p>Krossover is a sports media and analytics startup that brings easy video breakdown and in-depth analytics to coaches and athletes at all levels. Think Friday Night Lights meets Moneyball. We're located in New York's Chelsea neighborhood. It's a spacious, sunny office with not a single grey wall anywhere. Our culture is one of intelligence and collaboration. Every now and then we talk sports.</p>
                   <p>We offer a competitive salary and benefits.</p>
@@ -64,10 +64,10 @@
           <div class="row">
             <div class="col-sm-6">
               <ul class="list-inline link-footer text-center-xs">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Acceuil</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="about.html">à propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
               </ul>
             </div>
             <div class="col-sm-6 ">
@@ -84,11 +84,8 @@
       </footer>
       <!-- end main-footer -->
                   <div class="text-right">
-                    <p><a href="#" class="btn btn-theme btn-line dark btn-block-xs">Aplly WIth Linkedin</a></p>
+                    
                     <p><a href="#modal-apply"  data-toggle="modal" class="btn btn-theme btn-t-primary btn-block-xs">Apply This Job</a></p>
-                    <p><a href="#" class="btn btn-theme btn-t-primary btn-block-xs">Login to Save This Job</a></p>
-                    <p><a href="#map-toogle" id="btn-map-toogle" data-toggle="collapse" class="btn btn-theme btn-t-primary btn-block-xs">Ofice Location</a></p>
-                    <p>Share This Job <span class="space-inline-10"></span> :</p>
                     <p class="share-btns">
                       <a href="#" class="btn btn-primary"><i class="fa fa-facebook"></i></a>
                       <a href="#" class="btn btn-info"><i class="fa fa-twitter"></i></a>
@@ -103,66 +100,46 @@
           </div>
         </div>
 
-        <!-- block map -->
-        <div class="collapse" id="map-toogle">
-          <div class=" bg-color2" id="map-area">
-            <div class="container">
-              <div class="marker-description">
-                <div class="inner">
-                  <h4 class="no-margin-top">Office Location</h4>
-                  Central Jakarta No 1234, Jakarta, Indonesia
-                </div>
-              </div>
-            </div>
-            <div class="map-area-detail">
-              <!-- change data  lat abd lng here -->
-              <div class="box-map-detail" id="map-detail-job" data-lat="48.856318" data-lng="2.351866"></div>
-            </div>
-          </div>
-        </div><!-- end block map -->
-
-
-
-
+        
 
         <!-- modal apply -->
         <div class="modal fade" id="modal-apply">
           <div class="modal-dialog ">
             <div class="modal-content">
-              <form>
+              <form action="/job/apply/{{job.id}}"  method="POST" enctype="multipart/form-data">
                 <div class="modal-header ">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" >Apply</h4>
+                  <h4 class="modal-title" >postuler</h4>
                 </div>
                 <div class="modal-body">
                   <div class="form-group">
-                    <label>Full name</label>
-                    <input type="email" class="form-control "  placeholder="Enter Email">
+                    <label>Nom Complet</label>
+                    <input type="text" class="form-control "  placeholder="entrer votre nom" name='nom'>
                   </div>
                   <div class="form-group">
-                    <label>Email address</label>
-                    <input type="email" class="form-control "  placeholder="Enter Email">
+                    <label>Adresse Email</label>
+                    <input type="email" class="form-control "  placeholder="entrer votre email" name='email'>
                   </div>
                   <div class="form-group">
-                    <label>Tell us why you better?</label>
-                    <textarea class="form-control" rows="6" placeholder="Something Comment"></textarea>
+                    <label>pourquoi étes-vous le meilleur ?</label>
+                    <textarea class="form-control" rows="6" placeholder="" name='skills'></textarea>
                   </div>
                   <div class="form-group">
-                    <label>Your Resume</label>
+                    <label>Votre CV</label>
                     <div class="input-group">
                       <span class="input-group-btn">
                         <span class="btn btn-default btn-theme btn-file">
-                          File  <input type="file" >
+                          Fichier <input type="file" name='cv'>
                         </span>
                       </span>
                       <input type="text" class="form-control form-flat" readonly>
                     </div>
-                    <small>Upload your CV/resume. Max. file size: 24 MB.</small>
+                    <small>importer votre CV. Max. file size: 24 MB.</small>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default btn-theme" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-success btn-theme">Send Application</button>
+                  <button type="button" class="btn btn-default btn-theme" data-dismiss="modal">fermer</button>
+                  <button type="submit" class="btn btn-success btn-theme">envoyer l'Application</button>
                 </div>
               </form>
             </div>

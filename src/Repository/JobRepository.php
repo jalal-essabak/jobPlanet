@@ -40,15 +40,14 @@ class JobRepository extends ServiceEntityRepository
     public function findAllJobs($value1,$value2)
     {
         return $this->createQueryBuilder('j')
-            ->Where('j.secteur like :val1')
+            ->Where('j.job_title like :val1')
             ->AndWhere('j.location like :val2')
             ->AndWhere('j.confirmation = :val')
             ->setParameter('val1', '%'.$value1.'%')
             ->setParameter('val2', '%'.$value2.'%')
             ->setParameter('val', 1)
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
     }
 
     public function finddetail($value)
@@ -59,6 +58,19 @@ class JobRepository extends ServiceEntityRepository
             ->getQuery()
             ->getSingleResult()
         ;
+    }
+    /**
+      * @return Job[] Returns an array of Job objects
+    */
+    
+    public function findNonConfirmedJobs()
+    {
+        return $this->createQueryBuilder('j')
+            ->andWhere('j.confirmation = :val')
+            ->setParameter('val', 0)
+            ->orderBy('j.id', 'ASC')
+            ->getQuery()
+            ->getResult();
     }
      
 }

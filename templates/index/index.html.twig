@@ -24,21 +24,21 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label>Quoi</label>
-                        <input class="form-control  input-lg" placeholder="job title, keywords or company name" name="job">
+                        <input class="form-control  input-lg" placeholder="titre, mot clé de l'offre" name="job">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label>Où</label>
-                        <input class="form-control input-lg" placeholder="city, province, or region" name="locale">
+                        <input class="form-control input-lg" placeholder="location" name="locale">
                       </div>
                     </div>
                   </div>
                   <div class="form-group">
-                    <button class="btn btn-t-primary btn-lg btn-theme btn-pill btn-block" type="submit" >Find a Jobs</button>
+                    <button class="btn btn-t-primary btn-lg btn-theme btn-pill btn-block" type="submit" >trouver un emploie</button>
                   </div>
                   <div class="text-center">
-                    <a href="#modal-advanced" data-toggle="modal">Advanced Job Search</a>
+                    <a href="#modal-advanced" data-toggle="modal">recherche avancée</a>
                   </div>
                 </form> <!-- end form search -->
               </div>
@@ -53,26 +53,26 @@
                 <form>
                   <div class="modal-header" >
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Advanced Job Search</h4>
+                    <h4 class="modal-title" id="myModalLabel">recherche avancée</h4>
                   </div>
                   <div class="modal-body">
-                    <h5>Find Jobs</h5>
+                    <h5>trouver un emploie</h5>
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label>With all of these words</label>
+                          <label>avec toutes ces mots</label>
                           <input type="text" class="form-control " name="text" >
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label>With the exact phrase</label>
+                          <label>avec la phrase exacte</label>
                           <input type="text" class="form-control " name="text" >
                         </div>
                       </div>
                     </div>
                     <div class="form-group">
-                      <label>Show jobs of type</label>
+                      <label>afficher les offres de types:</label>
                       <select class="form-control">
                         <option value="all">All job types</option>
                         <option value="fulltime">Full-time</option>
@@ -134,8 +134,8 @@
                     </div>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-default btn-theme" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-success btn-theme">Find Jobs</button>
+                    <button type="button" class="btn btn-default btn-theme" data-dismiss="modal">fermer</button>
+                    <button type="submit" class="btn btn-success btn-theme">trouver des offres</button>
                   </div>
                 </form>
               </div>
@@ -183,10 +183,10 @@
           <div class="row">
             <div class="col-sm-6">
               <ul class="list-inline link-footer text-center-xs">
-                <li><a href="{{path('index')}}">Home</a></li>
+                <li><a href="{{path('index')}}">Acceuil</a></li>
                 <li><a href="{{path('blog')}}">Blog</a></li>
-                <li><a href="{{path('about')}}">About Us</a></li>
-                <li><a href="{{path('contact')}}">Contact Us</a></li>
+                <li><a href="{{path('about')}}">à propos</a></li>
+                <li><a href="{{path('contact')}}">Contact</a></li>
               </ul>
             </div>
             <div class="col-sm-6 ">
