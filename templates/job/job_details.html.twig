@@ -8,11 +8,9 @@
           <div class="container">
             <div class="row">
               <div class="col-sm-6 hidden-xs">
-                <div>Job details :</div>
+                <div>Details de l'offre</div>
               </div>
-              <div class="col-sm-6">
-                <div class="text-right"><a href="{{path('findjob')}}">&laquo; Go back to job listings</a></div>
-              </div>
+          
             </div>
           </div>
         </div><!-- end link top -->
@@ -24,33 +22,20 @@
 
                 <!-- box item details -->
                 <div class="block-section box-item-details">
-                  <div class="row">
-                    <div class="col-md-8">
-                      <a href="company_page.html"><img src="./assets/theme/images/patner/4.png" alt=""></a>
-                    </div>
-                    <div class="col-md-4">
-                      <p class="text-right"><a href="#">Go to our website &raquo;</a></p>
-                    </div>
-                  </div>
+                  
 
                   <h2 class="title"><a href="#">{{job.job_title}}</a></h2>
                   <div class="job-meta">
                     <ul class="list-inline">
-                      <li><i class="fa fa-briefcase"></i> Contract Full-Time</li>
+                    <!--  <li><i class="fa fa-briefcase"></i> Contract Full-Time</li>-->
                       <li><i class="fa fa-map-marker"></i> {{job.location}}</li>
                     </ul>
                   </div>
-                  <p>Location: {{job.location}} Type: Contracted to Full Time Min. Experience: Experienced
-                    Krossover is looking for a Web Application Developer to join our team of smart developers. We build web and mobile applications and games for coaches, athletes and fans. If you're a talented programmer, and like sports and sports analytics, this is the position for you.</p>
-                  <p>Our ideal candidate is technically curious, has a solid understanding of OOP and web development, and wants to build applications that improve people's lives.</p>
-                  <p>We're interested in filling this position on either a contract or full-time basis. </p>
-
-                  <h4>What you'll do:</h4>
+                  <h4>Description</h4>
                   <p>{{job.description}}</p>
-                  <h4>What we're looking for:</h4>
-                  {{job.skills}}
-                  <p>Krossover is a sports media and analytics startup that brings easy video breakdown and in-depth analytics to coaches and athletes at all levels. Think Friday Night Lights meets Moneyball. We're located in New York's Chelsea neighborhood. It's a spacious, sunny office with not a single grey wall anywhere. Our culture is one of intelligence and collaboration. Every now and then we talk sports.</p>
-                  <p>We offer a competitive salary and benefits.</p>
+
+                  <h4>Competences</h4>
+                  <p>{{job.skills}}</p>
                 </div><!-- end box item details -->
 
               </div>
@@ -64,10 +49,7 @@
           <div class="row">
             <div class="col-sm-6">
               <ul class="list-inline link-footer text-center-xs">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                
               </ul>
             </div>
             <div class="col-sm-6 ">
@@ -84,17 +66,8 @@
       </footer>
       <!-- end main-footer -->
                   <div class="text-right">
-                    <p><a href="#" class="btn btn-theme btn-line dark btn-block-xs">Aplly WIth Linkedin</a></p>
-                    <p><a href="#modal-apply"  data-toggle="modal" class="btn btn-theme btn-t-primary btn-block-xs">Apply This Job</a></p>
-                    <p><a href="#" class="btn btn-theme btn-t-primary btn-block-xs">Login to Save This Job</a></p>
-                    <p><a href="#map-toogle" id="btn-map-toogle" data-toggle="collapse" class="btn btn-theme btn-t-primary btn-block-xs">Ofice Location</a></p>
-                    <p>Share This Job <span class="space-inline-10"></span> :</p>
-                    <p class="share-btns">
-                      <a href="#" class="btn btn-primary"><i class="fa fa-facebook"></i></a>
-                      <a href="#" class="btn btn-info"><i class="fa fa-twitter"></i></a>
-                      <a href="#" class="btn btn-danger"><i class="fa fa-google-plus"></i></a>
-                      <a href="#" class="btn btn-warning"><i class="fa fa-envelope"></i></a>
-                    </p>
+                    <p><a href="#" class="btn btn-theme btn-line dark btn-block-xs">Postuler a cette offre</a></p>
+                   
                   </div>
                 </div><!-- box affix right -->
 

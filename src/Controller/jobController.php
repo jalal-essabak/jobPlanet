@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Job;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Entity\Company;
 
 class jobController extends Controller
@@ -52,8 +53,11 @@ class jobController extends Controller
     /**
      * @Route("/postjob/company" , name="company")
      */
-    public function registerCompany(){
-        return $this->render('job/company_registration.html.twig');
+    public function registerCompany(SessionInterface $session){
+        if(!$session->get('company')){
+            return $this->render('company/login.html.twig');    
+        }
+        return $this->render('job/job_post_form.html.twig');
     }
 
     /**
@@ -94,13 +98,13 @@ class jobController extends Controller
         $job->setJob_title($request->get('title'));
         $job->setSecteur($request->get('category'));
         $job->setSkills($request->get('competences'));        
-        $job->setNb_post(33);
+        $job->setNb_post($request->get('nb_postes'));
         $job->setLocation($request->get('location'));
         $job->setConfirmation(0);
         $entityManager->persist($job);
         $entityManager->flush();
         
-        return $this->render('mainfiles/test.html.twig',['job'=>$job]);
+        return $this->redirectToRoute('findjob');
     }
 
 }
