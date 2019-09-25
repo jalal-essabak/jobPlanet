@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Controller;
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,13 +15,16 @@ class ApplicationController extends AbstractController
      */
     public function application(Request $request,$id,\Swift_Mailer $mailer)
     {
+        $date = new \DateTime();
+        
         $application = new Application();
         $application->setFullName($request->get('nom'));
         $application->setEmail($request->get('email'));
         $application->setTelephone($request->get('telephone'));
         $application->setCompetances($request->get('skills'));
         $resume = $request->files->get('cv');
-        $application->setCV($resume->getClientOriginalName());
+        $resumeName=uniqid().'_'.$resume->getClientOriginalName();
+        $application->setCV($resumeName);
             
                 try {
                     $resume->move(
@@ -36,7 +38,7 @@ class ApplicationController extends AbstractController
             $entityManager->persist($application);
             $entityManager->flush();
             $job= $this->getDoctrine()->getRepository(Job::class)->find($id);
-
+            
             $message = (new \Swift_Message('Application a votre offre : '.$job->getJob_title()))
             ->setFrom('jobPlanet@exemple.com')
             ->setTo($application->getEmail())
