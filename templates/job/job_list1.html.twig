@@ -14,12 +14,10 @@
                   <!-- desc top -->
                   <div class="row hidden-xs">
                     <div class="col-sm-6  ">
-                      <p><strong class="color-black">PHP jobs in United States</strong></p>
+                      <h4><span class="color-black">Emplois en {{app.request.get('job')}} : </span></h4>
                     </div>
                     <div class="col-sm-6">
-                      <p class="text-right">
-                        Jobs 1 to 10 of 578
-                      </p>
+                    
                     </div>
                   </div><!-- end desc top -->
 
@@ -31,14 +29,12 @@
                       <div class="row">
                         <!--<div class="col-md-1 hidden-sm hidden-xs"><div class="img-item"><img src={{asset("./assets/theme/images/company-logo/2.jpg")}} alt=""></div></div>-->
                         <div class="col-md-11">
-                          <h3 class="no-margin-top"><a href="/test/{{job.job_title}}" class="">{{job.job_title}}<i class="fa fa-link color-white-mute font-1x"></i></a></h3>
+                          <h3 class="no-margin-top"><a href="/job/{{job.id}}" class="">{{job.job_title}}<i class="fa fa-link color-white-mute font-1x"></i></a></h3>
                           <h5><span class="color-black">{{job.company_name}}</span> </h5>
                           <p class="text-truncate ">{{job.description}}</p>
                           <div>
                             <span class="color-white-mute">lorem upsem</span> -
-                            <a href="#need-login" data-toggle="modal" class="btn btn-xs btn-theme btn-default">save job</a> - 
-                            <a href="#modal-email" data-toggle="modal"  class="btn btn-theme btn-xs btn-default">email</a> - 
-                            <a href="#" class="btn btn-theme btn-xs btn-default">more ...</a>
+                            <a href="/job/{{job.id}}" class="btn btn-theme btn-xs btn-default">plus ...</a>
                           </div>
                         </div>
                       </div>
@@ -48,28 +44,9 @@
 
 
                   <!-- form get alert -->
-                  <div class="get_alert">
-                    <h4>Get email updates for the latest <span class=" ">PHP jobs in United States</span></h4>
-                    <form>
-                      <div class="row">
-                        <div class="col-md-9">
-                          <div class="form-group">
-                            <label>My Email</label>
-                            <input class="form-control" placeholder="Enter Email">
-                          </div>
-                        </div>
-                        <div class="col-md-3">
-                          <div class="form-group">
-                            <label class="hidden-sm hidden-xs ">&nbsp;</label>
-                            <button class="btn btn-theme btn-success btn-block">Activate</button>
-                          </div>
-                        </div>
-                      </div>
-                      <small>You can cancel email alerts at any time.</small>
-                    </form>
-                  </div><!-- end form get alert -->
+                  <!-- end form get alert -->
 
-                  <!-- pagination -->
+                  <!-- pagination 
                   <nav >
                     <ul class="pagination pagination-theme  no-margin">
                       <li>
@@ -87,13 +64,13 @@
                         </a>
                       </li>
                     </ul>
-                  </nav><!-- pagination -->
+                  </nav> --><!-- pagination -->
 
                 </div><!-- end box listing -->
 
 
               </div>
-              <div class="col-md-3">
+             <!-- <div class="col-md-3">
                 <div class="block-section-sm side-right">
                   <div class="row">
                     <div class="col-xs-6">
@@ -182,7 +159,7 @@
                         </ul>
 
                       </div>
-                    </div>
+                    </div>-->
 
 
 

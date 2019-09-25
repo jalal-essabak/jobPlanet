@@ -103,6 +103,24 @@ class SecurityController extends AbstractController
         
         return $this->redirectToRoute('confirm_registrations');
     }
+
+      /**
+     * @Route("/admin/delete-company/{id}", name="delete_company")
+     * @Security("has_role('ROLE_ADMIN')")
+     */
+    public function deleteCompany($id){
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $company = $this->getDoctrine()
+        ->getRepository(Company::class)
+        ->find($id);
+
+        $entityManager->remove($company);
+        $entityManager->flush();
+        
+        return $this->redirectToRoute('confirm_registrations');
+    }
+
     /**
      * @Route("/admin/jobs", name="confirm_jobs")
      * @Security("has_role('ROLE_ADMIN')")
@@ -129,6 +147,23 @@ class SecurityController extends AbstractController
         $job->setConfirmation(true);
 
         $entityManager->persist($job);
+        $entityManager->flush();
+        
+        return $this->redirectToRoute('confirm_jobs');
+        
+    }
+
+     /**
+     * @Route("/admin/delete-job/{id}", name="delete_job")
+     * @Security("has_role('ROLE_ADMIN')")
+     */
+    public function deleteJob($id){
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $job = $this->getDoctrine()
+        ->getRepository(Job::class)
+        ->find($id);
+        $entityManager->remove($job);
         $entityManager->flush();
         
         return $this->redirectToRoute('confirm_jobs');

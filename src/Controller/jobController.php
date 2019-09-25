@@ -11,6 +11,7 @@ use App\Entity\Job;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Entity\Company;
 
+
 class jobController extends Controller
 {   
     
@@ -38,7 +39,7 @@ class jobController extends Controller
            return $this->render('job/job_list1.html.twig',array('job_result' => $job_result));
     }
     /**
-     * @Route("/test/{id}" )
+     * @Route("/job/{id}" )
      */
     public function details($id){
         $job=$this->getDoctrine()->getRepository(Job::class)->finddetail($id); 
@@ -86,14 +87,14 @@ class jobController extends Controller
     }
 
     /**
-     * @Route("/job/form", name="form-submit")
+     * @Route("/job-form", name="form_submit")
      */
-    public function jobFormSubmit(Request $request){
+    public function jobFormSubmit(Request $request,SessionInterface $session){
         
         $job = new Job();
         $entityManager = $this->getDoctrine()->getManager();
         
-        $job->setCompany_name($request->get('company'));
+        $job->setCompany_name($session->get('company')->getCompany());
         $job->setDescription($request->get('description'));
         $job->setJob_title($request->get('title'));
         $job->setSecteur($request->get('category'));

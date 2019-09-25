@@ -98,4 +98,39 @@ class CompanyController extends AbstractController
         $session->set('company', null);
         return $this->redirectToRoute('index');
     }
+
+       /**
+     * @Route("/company/change-password", name="company_change_password")
+     */
+    public function companyChangePassword(SessionInterface $session){
+        return $this->render('company/change_password.html.twig');
+
+    }
+          /**
+     * @Route("/company/change-password/{id}", name="company_password_change_submit")
+     */
+    public function changePasswordSubmit($id,UserPasswordEncoderInterface $encoder,Request $request){
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $company = $this->getDoctrine()
+        ->getRepository(Company::class)
+        ->find($id);
+
+        $plainOldPassword = $request->get('old_password');
+        $plainNewPassword = $request->get('new_password');
+
+        if($company==null || !$encoder->isPasswordValid($company,$plainOldPassword)){
+            return $this->render('company/change_password.html.twig',['msg'=>'Ancien mot de passe invalide',"color"=>"red"]);
+        }
+        else{
+            $encodedNewPassword = $encoder->encodePassword($company, $plainNewPassword);
+            $company->setPassword($encodedNewPassword);
+            $entityManager->persist($company);
+            $entityManager->flush();
+            return $this->render('company/change_password.html.twig',['msg'=>'Votre mot de passe a été modifié avec succès!',"color"=>"green"]);
+        }
+      
+
+    }
+
 }

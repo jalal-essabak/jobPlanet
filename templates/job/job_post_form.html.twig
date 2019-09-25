@@ -1,75 +1,83 @@
 {% extends 'base.html.twig'%}
 {% block body %}
-  <!-- body-content -->
-      <div class="body-content clearfix" >
+    <!-- body-content -->
+    <div class="body-content clearfix">
 
         <div class="bg-color2 block-section line-bottom">
-          <div class="container">
-            <h1 class="text-center no-margin">Créer une offre de travail</h1>
-          </div>
+            <div class="container">
+                <h1 class="text-center no-margin">Créer une offre de travail</h1>
+            </div>
         </div>
 
         <div class="bg-color1 block-section line-bottom">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-8 col-md-offset-2">
+            <div class="container">
+                <div class="row">
+                    <div
+                        class="col-md-8 col-md-offset-2">
 
-                <!-- form post a job -->
-                <form action="{{path('form-submit')}}" method="POST" >
-                  <div class="form-group">
-                    <label>Nom de votre entreprise</label>
-                    <input type="text" class="form-control " name="company" placeholder="Enter Company Name">
-                  </div>
-                  <div class="form-group">
-                    <label>Titre de l'offre</label>
-                    <input type="text" class="form-control " name="title" placeholder="Ecrire ici intitulé du poste. EX : Développeur PHP ...">
-                  </div>
-                  <div class="form-group">
-                    <label>Description</label>
-                    <div class="color-white-mute"><small>Décrire les responsabilités de cet emploi, expérience de travail requise, compétences ou formation.</small></div>
-                    <textarea class="form-control" rows="6" name="description" placeholder="Entrer une description du poste"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <label>Competences</label>
-                    <div class="color-white-mute"><small>Decrire les competences necessaires </small></div>
-                    <textarea class="form-control" rows="6" name="competences" placeholder="Entrer une description du poste"></textarea>
-                  </div>
-                  <div class="row">
-                  <div class="form-group col-md-4">
-                    <label>Lieu</label>
-                    <input type="text" class="form-control "  name="location" placeholder="EX : Rabat">
-                    
-                  </div >
-                  <div class="form-group col-md-3">
-                    <label>Nombre de postes</label>
-                    <input type="number" class="form-control "  name="nb_postes" >
-                    
-                  </div >
-                  <div class="form-group col-md-5">
-                    <label>Secteur</label>
-                    <select class="form-control" name="category">
-                      <option>Technologie de l'information</option>
-                      <option>Education</option>
-                      <option>L'industrie</option>
-                      <option>Banque et Finance</option>
-                      <option>Médias</option>
-                    </select>
-                  </div>
-                  </div>
+                        <!-- form post a job -->
+                        <form action="{{path('form_submit')}}" method="POST">
+                            <div class="form-group">
+                                <label>Nom de votre entreprise</label>
+                                <input type="text" value={{app.session.get('company').company}} class="form-control " name="company" placeholder="Enter Company Name" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Titre de l'offre</label>
+                                <input type="text" class="form-control " name="title" placeholder="Ecrire ici intitulé du poste. EX : Développeur PHP ...">
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <div class="color-white-mute">
+                                    <small>Décrire les responsabilités de cet emploi, expérience de travail requise, compétences ou formation.</small>
+                                </div>
+                                <textarea class="form-control" rows="6" name="description" placeholder="Entrer une description du poste"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Competences</label>
+                                <div class="color-white-mute">
+                                    <small>Decrire les competences necessaires
+                                    </small>
+                                </div>
+                                <textarea class="form-control" rows="6" name="competences" placeholder="Entrer une description du poste"></textarea>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label>Lieu</label>
+                                    <input type="text" class="form-control " name="location" placeholder="EX : Rabat">
+
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>Nombre de postes</label>
+                                    <input type="number" class="form-control " name="nb_postes">
+
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <label>Secteur</label>
+                                    <select class="form-control" name="category">
+                                        <option>Technologie de l'information</option>
+                                        <option>Education</option>
+                                        <option>L'industrie</option>
+                                        <option>Banque et Finance</option>
+                                        <option>Médias</option>
+                                    </select>
+                                </div>
+                            </div>
 
 
-                  <div class="form-group ">
-                    <button class="btn btn-t-primary btn-theme" type="submit" >Valider</button>
-                    <button class="btn btn-theme btn-line soft" type="reset" >Vider</button>
+                            <div class="form-group ">
+                                <button class="btn btn-t-primary btn-theme" type="submit">Valider</button>
+                                <button class="btn btn-theme btn-line soft" type="reset">Vider</button>
 
-                  </div>
+                            </div>
 
 
-                </form> <!-- end form post a job -->
-              </div>
+                        </form>
+                        <!-- end form post a job -->
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>        
-      </div><!--end body-content -->
+        </div>
+    </div>
+    <!--end body-content -->
 
 {% endblock %}

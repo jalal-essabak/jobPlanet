@@ -13,25 +13,31 @@
                         <strong>Créer une offre d'emploi</strong>
                     </a>
                 </li>
-                  <li class="">
+                <li class="">
                     <a href="{{path('contact')}}">
                         <strong>Contactez nous</strong>
                     </a>
                 </li>
-                   <li class="">
+                <li class="">
                     <a href="{{path('about')}}">
                         <strong>A propos de nous</strong>
                     </a>
                 </li>
-                
+
             </ul>
-          {% if app.session.get('company') %}
+            {% if app.session.get('company') %}
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" class="link-profile dropdown-toggle" data-toggle="dropdown">
                             {{ app.session.get('company').company }}
                             <b class="caret"></b>
                         </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{path('company_change_password')}}">
+                                    Changer le mot de passe</a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="link-btn">
                         <a href="{{path('company_logout')}}">

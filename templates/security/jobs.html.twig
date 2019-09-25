@@ -70,7 +70,8 @@
                         <th>Nom d'entreprise</th>
                         <th>Secteur</th>
                         <th>Location</th>
-                        <th class="text-right">Actions</th>
+                        <th class="text-right">Confirmer</th>
+                        <th class="text-right">Supprimer</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -81,7 +82,9 @@
                         <td>{{job.company_name}}</td>
                         <td>{{job.secteur}}</td>
                         <td>{{job.location}}</td>
-                        <td class="text-right"><a href="{{path('confirm_job',{'id':job.id})}}" class="btn btn-theme btn-xs btn-success">Confirmer</a></td>
+                        <td class="text-right"><a href="{{path('confirm_job',{'id':job.id})}}" class="btn btn-theme btn-xs btn-success">✔</a></td>
+                        <td class="text-right"><a href="{{path('delete_job',{'id':job.id})}}" class="btn btn-theme btn-xs btn-danger">X</a></td>
+
                       </tr>
                       {% endfor %}
                     </tbody>
