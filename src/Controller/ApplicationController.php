@@ -47,6 +47,6 @@ class ApplicationController extends AbstractController
             
             
             
-        return $this->render('index/index.html.twig',array('request'=>$request));
+        return $this->redirectToRoute('index');
     }
 }
